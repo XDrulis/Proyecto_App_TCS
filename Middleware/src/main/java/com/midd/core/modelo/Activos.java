@@ -16,7 +16,7 @@ public class Activos implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="id_ac",nullable = false,updatable = false)
-	private Long 	id_activo;
+	private Long id_activo;
 	
 	@Column(name="area_ac",nullable=false)
 	private String 	area;

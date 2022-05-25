@@ -94,7 +94,7 @@ public class RecursosPerfil {
 		return new ResponseEntity<>(mio,HttpStatus.OK);
 	}
 	
-	@PostMapping("habilidades")
+	@PostMapping("habilidades")//agregar el nivel
 	public ResponseEntity<?> habilidades(@RequestBody Perfil nuevo){
 		Map<String, Object> response = new HashMap<>();
 		if (serviciosPerfil.buscarPerfilId(nuevo.getId_ultimatix())) {
@@ -122,7 +122,7 @@ public class RecursosPerfil {
 	
 	//Catalogo habilidades
 	
-	@GetMapping("habilidades")
+	@GetMapping("habilidades")// añadir nivel
 	public ResponseEntity<?> habilidades(){
 		List<Habilidades> mis = serviciosPerfil.buscarHabilidades();
 		return new ResponseEntity<>(mis,HttpStatus.OK);
@@ -130,7 +130,6 @@ public class RecursosPerfil {
 	
 	@PostMapping("agregarHabilidad")
 	public ResponseEntity<?> agregarHabilidad(@RequestBody Habilidades habilidad){
-		Map<String, Object> response = new HashMap<>();
 		List<Habilidades> mis = serviciosPerfil.buscarHabilidades();
 		for (Habilidades iterante : mis) {
 			if  (iterante.getNombre().equals(habilidad.getNombre())){
@@ -141,4 +140,17 @@ public class RecursosPerfil {
 		return new ResponseEntity<>(habilidad,HttpStatus.OK);
 	}
 
+	@PostMapping("mis-habilidades")
+	public ResponseEntity<?> misHabilidades(@RequestBody Perfil perfil){
+		Object perfil_habilidades = serviciosPerfil.habilidadesDuplicadas(perfil);
+		if(perfil_habilidades.equals(false)){
+			return new ResponseEntity<>(respuestas.respuestas("Habilidad ya registrada en este perfil", "3001"),HttpStatus.BAD_REQUEST);
+		}
+		return new ResponseEntity<>(perfil_habilidades,HttpStatus.OK);
+	}
+	
+	// 
+	// 	{nombre:AWS,nivel:medio},
+	// 	{nombre:Azure,nivel:alto}
+	// ]
 }

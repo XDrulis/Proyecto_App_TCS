@@ -1,6 +1,7 @@
 package com.midd.core.administracion;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -64,14 +65,12 @@ public class ServiciosPerfil {
 			try {
 				if (!mi.equals(null)) {
 					for(int i=0; i<mi.length;i++) {
-						//System.out.println(mi[i]);
 						if (mi[i].equals(habilidad)) {
 							perfiles.add(iterante);
 						}
 					}
 				}
 			} catch (Exception e) {
-				//System.out.println("NullPointer");
 			}			
 		}
 		return perfiles;
@@ -95,4 +94,35 @@ public class ServiciosPerfil {
 		return habilidadesRepo.findAll();
 	}
 	
+	public Object habilidadesDuplicadas(Perfil perfil){
+		Perfil mi_perfil = perfilRepo.getById(perfil.getId_ultimatix());
+		for(String habilidad: perfil.getHabilidades()){
+			for(String mis_habilidad: mi_perfil.getHabilidades()){
+				if(habilidad.equals(mis_habilidad)){
+					return false;
+				}
+			}
+			
+		}
+		String[] mis_habilidades = mi_perfil.getHabilidades();
+		String[] mis_niveles = mi_perfil.getNivel_habilidad();
+
+		List<String> habilidades = new ArrayList<>(Arrays.asList(mis_habilidades));
+		List<String> niveles_habilidad = new ArrayList<>(Arrays.asList(mis_niveles));
+		
+		for(int i = 0; i < perfil.getHabilidades().length; i++){
+			habilidades.add(perfil.getHabilidades()[i]);
+			niveles_habilidad.add(perfil.getNivel_habilidad()[i]);
+		}
+
+		String[] nuevas_habilidades = new String[habilidades.size()];
+		String[] nuevos_niveles = new String [niveles_habilidad.size()];
+
+		habilidades.toArray(nuevas_habilidades);
+		niveles_habilidad.toArray(nuevos_niveles);
+
+		mi_perfil.setHabilidades(nuevas_habilidades);
+		mi_perfil.setNivel_habilidad(nuevos_niveles);
+		return perfilRepo.save(mi_perfil);
+	}
 }
