@@ -1,0 +1,49 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>TCS Registro de Usuarios</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+  	<style>
+  		body{
+			background-color: #9E60B5;
+			color: white;
+		}
+  	</style>
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.1056.0" data-gr-ext-installed="">
+     <h2 class="form-signin-heading">TCS Registro de Usuarios</h2>
+     <div class="container">
+      <form id="sampleForm" class="form-signin" th:action="@{/asociados/agregarAsociado}" method="POST">
+        <p>
+          <label for="id_numero_Ultimatix" class="sr-only">Numero de Ultimatix</label>
+          <input type="text" id="{id_numero_Ultimatix}" name="{id_numero_Ultimatix}" class="form-control" placeholder="Numero de Ultimatix" required="true" autofocus="">
+        </p>
+        <p>
+          <label for="clave" class="sr-only">Clave</label>
+          <input type="password" id="{clave}" name="{clave}" class="form-control" placeholder="Clave" required="true">
+        </p>
+        <p>
+          <label for="nombre" class="sr-only">Nombre</label>
+          <input type="text" id="{nombre}" name="{nombre}" class="form-control" placeholder="Nombre" required="">
+        </p>
+        <p>
+          <label for="apellido" class="sr-only">Apellido</label>
+          <input type="text" id="{apellido}" name="{apellido}" class="form-control" placeholder="Apellido" required="">
+        </p>
+        <p>
+          <label for="telefono" class="sr-only">Telefono</label>
+          <input type="text" id="{telefono}" name="{telefono}" class="form-control" placeholder="Telefono" required="">
+        </p>
+        <p>
+          <label for="correo" class="sr-only">Correo</label>
+          <input type="mail" id="{correo}" name="{correo}" class="form-control" placeholder="Correo" required="">
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="btnSubmit">Enviar</button>
+      </form>
+</div>
+</body>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+</html>
