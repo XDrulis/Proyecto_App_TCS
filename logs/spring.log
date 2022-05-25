@@ -232,3 +232,138 @@ This generated password is for development use only. Your security configuration
 2022-05-25 12:51:20.878  INFO 9596 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-05-25 12:51:20.879  INFO 9596 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-05-25 12:51:20.880  INFO 9596 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-25 12:56:53.491  INFO 11420 --- [main] com.midd.core.MiddlewareApplication      : Starting MiddlewareApplication using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 11420 (C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware\target\classes started by user in C:\TCS_Proyecto\middleware_tcs_proyecto)
+2022-05-25 12:56:53.495  INFO 11420 --- [main] com.midd.core.MiddlewareApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-05-25 12:56:54.955  INFO 11420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-25 12:56:55.142  INFO 11420 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 158 ms. Found 10 JPA repository interfaces.
+2022-05-25 12:56:55.814  INFO 11420 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$30a3b299] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-25 12:56:55.903  INFO 11420 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-05-25 12:56:56.956  INFO 11420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-25 12:56:56.979  INFO 11420 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-25 12:56:56.981  INFO 11420 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-25 12:56:57.288  INFO 11420 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-25 12:56:57.289  INFO 11420 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3664 ms
+2022-05-25 12:56:57.906  INFO 11420 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-25 12:56:58.002  INFO 11420 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-25 12:56:58.254  INFO 11420 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-25 12:56:58.427  INFO 11420 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-25 12:56:59.862  INFO 11420 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-25 12:56:59.911  INFO 11420 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-05-25 12:57:01.937  INFO 11420 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-25 12:57:01.967  INFO 11420 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-25 12:57:03.459  WARN 11420 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-25 12:57:03.665  WARN 11420 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 8a21976d-cddd-44bb-b2dd-2cdd80cef701
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-25 12:57:03.896  INFO 11420 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-25 12:57:04.401  INFO 11420 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-25 12:57:04.881  INFO 11420 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-25 12:57:04.907  INFO 11420 --- [main] com.midd.core.MiddlewareApplication      : Started MiddlewareApplication in 12.412 seconds (JVM running for 13.266)
+2022-05-25 13:00:08.865  INFO 11420 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-25 13:00:08.866  INFO 11420 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-25 13:00:08.872  INFO 11420 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2022-05-25 13:32:03.197  INFO 16424 --- [main] com.midd.core.MiddlewareApplication      : Starting MiddlewareApplication using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 16424 (C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware\target\classes started by user in C:\TCS_Proyecto\middleware_tcs_proyecto)
+2022-05-25 13:32:03.209  INFO 16424 --- [main] com.midd.core.MiddlewareApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-05-25 13:32:04.719  INFO 16424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-25 13:32:04.897  INFO 16424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 156 ms. Found 10 JPA repository interfaces.
+2022-05-25 13:32:05.695  INFO 16424 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$68e233ce] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-25 13:32:05.789  INFO 16424 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-05-25 13:32:06.783  INFO 16424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-25 13:32:06.817  INFO 16424 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-25 13:32:06.817  INFO 16424 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-25 13:32:07.091  INFO 16424 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-25 13:32:07.092  INFO 16424 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3784 ms
+2022-05-25 13:32:07.667  INFO 16424 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-25 13:32:07.763  INFO 16424 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-25 13:32:08.060  INFO 16424 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-25 13:32:08.275  INFO 16424 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-25 13:32:09.724  INFO 16424 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-25 13:32:09.768  INFO 16424 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-05-25 13:32:12.035  INFO 16424 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-25 13:32:12.058  INFO 16424 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-25 13:32:13.008  WARN 16424 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-25 13:32:13.126  WARN 16424 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4a748358-bc61-4317-95f8-f938583e2535
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-25 13:32:13.291  INFO 16424 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-25 13:32:13.689  INFO 16424 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-25 13:32:14.042  INFO 16424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-25 13:32:14.067  INFO 16424 --- [main] com.midd.core.MiddlewareApplication      : Started MiddlewareApplication in 11.784 seconds (JVM running for 12.721)
+2022-05-25 13:32:31.868  INFO 16424 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-25 13:32:31.870  INFO 16424 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-25 13:32:31.873  INFO 16424 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-05-25 13:32:31.943  WARN 16424 --- [http-nio-8081-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-05-25 13:32:37.894  WARN 16424 --- [http-nio-8081-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<?> com.midd.core.RecursosPerfil.misHabilidades(com.midd.core.modelo.Perfil)]
+2022-05-25 13:32:45.027  WARN 16424 --- [http-nio-8081-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<?> com.midd.core.RecursosPerfil.misHabilidades(com.midd.core.modelo.Perfil)]
+2022-05-25 13:34:04.649  INFO 7748 --- [main] com.midd.core.MiddlewareApplication      : Starting MiddlewareApplication using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 7748 (C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware\target\classes started by user in C:\TCS_Proyecto\middleware_tcs_proyecto)
+2022-05-25 13:34:04.654  INFO 7748 --- [main] com.midd.core.MiddlewareApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-05-25 13:34:06.007  INFO 7748 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-25 13:34:06.147  INFO 7748 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 10 JPA repository interfaces.
+2022-05-25 13:34:06.729  INFO 7748 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$2ae5afc3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-25 13:34:06.814  INFO 7748 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-05-25 13:34:07.519  INFO 7748 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-25 13:34:07.541  INFO 7748 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-25 13:34:07.542  INFO 7748 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-25 13:34:07.752  INFO 7748 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-25 13:34:07.753  INFO 7748 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3001 ms
+2022-05-25 13:34:08.241  INFO 7748 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-25 13:34:08.331  INFO 7748 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-25 13:34:08.606  INFO 7748 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-25 13:34:08.821  INFO 7748 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-25 13:34:10.237  INFO 7748 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-25 13:34:10.282  INFO 7748 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-05-25 13:34:12.267  INFO 7748 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-25 13:34:12.289  INFO 7748 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-25 13:34:13.218  WARN 7748 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-25 13:34:13.348  WARN 7748 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1cc796b4-490b-4c81-bec9-14a91aa4729d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-25 13:34:13.500  INFO 7748 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-25 13:34:13.848  INFO 7748 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-25 13:34:14.144  INFO 7748 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-25 13:34:14.164  INFO 7748 --- [main] com.midd.core.MiddlewareApplication      : Started MiddlewareApplication in 10.271 seconds (JVM running for 11.007)
+2022-05-25 13:34:19.006  INFO 7748 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-25 13:34:19.006  INFO 7748 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-25 13:34:19.009  INFO 7748 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-05-25 13:35:20.523  INFO 8396 --- [main] com.midd.core.MiddlewareApplication      : Starting MiddlewareApplication using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 8396 (C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware\target\classes started by user in C:\TCS_Proyecto\middleware_tcs_proyecto)
+2022-05-25 13:35:20.531  INFO 8396 --- [main] com.midd.core.MiddlewareApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-05-25 13:35:21.964  INFO 8396 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-25 13:35:22.108  INFO 8396 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 126 ms. Found 10 JPA repository interfaces.
+2022-05-25 13:35:22.721  INFO 8396 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$104b9e32] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-25 13:35:22.818  INFO 8396 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-05-25 13:35:23.449  INFO 8396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-25 13:35:23.473  INFO 8396 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-25 13:35:23.474  INFO 8396 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-25 13:35:23.688  INFO 8396 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-25 13:35:23.689  INFO 8396 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3043 ms
+2022-05-25 13:35:24.161  INFO 8396 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-25 13:35:24.261  INFO 8396 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-25 13:35:24.528  INFO 8396 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-25 13:35:24.731  INFO 8396 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-25 13:35:26.161  INFO 8396 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-25 13:35:26.204  INFO 8396 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-05-25 13:35:28.510  INFO 8396 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-25 13:35:28.533  INFO 8396 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-25 13:35:29.349  WARN 8396 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-25 13:35:29.485  WARN 8396 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e7d5c268-7ad2-4f08-a757-c9a48eb2f53c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-25 13:35:29.659  INFO 8396 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-25 13:35:30.128  INFO 8396 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-25 13:35:30.483  INFO 8396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-25 13:35:30.507  INFO 8396 --- [main] com.midd.core.MiddlewareApplication      : Started MiddlewareApplication in 10.852 seconds (JVM running for 11.586)
+2022-05-25 13:35:34.718  INFO 8396 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-25 13:35:34.719  INFO 8396 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-25 13:35:34.721  INFO 8396 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

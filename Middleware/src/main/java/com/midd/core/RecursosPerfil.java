@@ -140,8 +140,8 @@ public class RecursosPerfil {
 		return new ResponseEntity<>(habilidad,HttpStatus.OK);
 	}
 
-	@PostMapping("mis-habilidades")
-	public ResponseEntity<?> misHabilidades(@RequestBody Perfil perfil){
+	@PostMapping("agregar-mis-habilidades")
+	public ResponseEntity<?> AgregarmisHabilidades(@RequestBody Perfil perfil){
 		Object perfil_habilidades = serviciosPerfil.habilidadesDuplicadas(perfil);
 		if(perfil_habilidades.equals(false)){
 			return new ResponseEntity<>(respuestas.respuestas("Habilidad ya registrada en este perfil", "3001"),HttpStatus.BAD_REQUEST);
@@ -149,6 +149,18 @@ public class RecursosPerfil {
 		return new ResponseEntity<>(perfil_habilidades,HttpStatus.OK);
 	}
 	
+
+	@PostMapping("mis-habilidades")
+	public ResponseEntity<?> misHabilidades(@RequestBody Perfil perfil) {
+		Map<String, Object> response = new HashMap<>();
+		Object perfilObj = serviciosPerfil.buscarHabilidadUltimatix(perfil);
+		response.put("habilidades", perfilObj);
+		
+		return new ResponseEntity<>(response,HttpStatus.OK);
+	}
+	
+	
+
 	// 
 	// 	{nombre:AWS,nivel:medio},
 	// 	{nombre:Azure,nivel:alto}

@@ -125,4 +125,17 @@ public class ServiciosPerfil {
 		mi_perfil.setNivel_habilidad(nuevos_niveles);
 		return perfilRepo.save(mi_perfil);
 	}
+
+	public Object buscarHabilidadUltimatix(Perfil perfil){
+		Perfil mi_perfil = perfilRepo.getById(perfil.getId_ultimatix());
+		String[] mis_habilidades = mi_perfil.getHabilidades();
+		String[] mis_niveles = mi_perfil.getNivel_habilidad();
+		List<Object> habilidadesResponse = new ArrayList<>();
+		List<String> habilidades = new ArrayList<>(Arrays.asList(mis_habilidades));
+		List<String> niveles_habilidad = new ArrayList<>(Arrays.asList(mis_niveles));
+		habilidadesResponse.add(habilidades);
+		habilidadesResponse.add(niveles_habilidad);
+		return habilidadesResponse;
+	}
+
 }
