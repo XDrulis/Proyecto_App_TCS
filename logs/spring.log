@@ -533,3 +533,39 @@ This generated password is for development use only. Your security configuration
 2022-05-25 21:19:28.853  INFO 2528 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-05-25 21:19:28.857  INFO 2528 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-05-25 21:19:28.865  INFO 2528 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-25 22:06:52.200  INFO 15172 --- [main] com.midd.core.MiddlewareApplication      : Starting MiddlewareApplication using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 15172 (C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware\target\classes started by user in C:\TCS_Proyecto\middleware_tcs_proyecto)
+2022-05-25 22:06:52.209  INFO 15172 --- [main] com.midd.core.MiddlewareApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-05-25 22:06:53.851  INFO 15172 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-25 22:06:54.138  INFO 15172 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 249 ms. Found 10 JPA repository interfaces.
+2022-05-25 22:06:55.064  INFO 15172 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$10a3b787] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-25 22:06:55.169  INFO 15172 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-05-25 22:06:55.982  INFO 15172 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-25 22:06:56.008  INFO 15172 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-25 22:06:56.019  INFO 15172 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-25 22:06:56.220  INFO 15172 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-25 22:06:56.221  INFO 15172 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3875 ms
+2022-05-25 22:06:56.787  INFO 15172 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-25 22:06:56.886  INFO 15172 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-25 22:06:57.185  INFO 15172 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-25 22:06:57.387  INFO 15172 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-25 22:06:58.802  INFO 15172 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-25 22:06:58.847  INFO 15172 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-05-25 22:07:01.004  INFO 15172 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-25 22:07:01.027  INFO 15172 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-25 22:07:02.334  WARN 15172 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-25 22:07:02.604  WARN 15172 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: a2697045-4fcb-40c3-96ee-0688f051a463
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-25 22:07:02.927  INFO 15172 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-25 22:07:03.721  INFO 15172 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-25 22:07:04.199  INFO 15172 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-25 22:07:04.221  INFO 15172 --- [main] com.midd.core.MiddlewareApplication      : Started MiddlewareApplication in 12.872 seconds (JVM running for 13.754)
+2022-05-25 22:07:19.158  INFO 15172 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-25 22:07:19.161  INFO 15172 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-25 22:07:19.164  INFO 15172 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-25 22:07:43.822  INFO 15172 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-25 22:07:43.827  INFO 15172 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-25 22:07:43.843  INFO 15172 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -147,11 +147,15 @@ public class RecursosAsignacionesProyecto {
                         if (asg.getUltimatix_asi().equals(perfil.getId_ultimatix()) && (asg.getEstado().equals(true))) {
                                 Map<String, Object> respuesta = new HashMap<>();
                                 Equipo buscado = servicio_equipo.buscarEquipoId(asg.getId_equipo_asi());
+                                respuesta.put("id_asignacion_proyecto_asi", asg.getId_asignacion_proyecto_asg());
+                                respuesta.put("id_equipo", asg.getId_equipo_asi());
                                 respuesta.put("nombre_equipo_asi", buscado.getNombre_equipo_asi());
                                 respuesta.put("tipo_equipo_asi", buscado.getTipo_equipo_asi());
+                                respuesta.put("ultimatix_asi", asg.getUltimatix_asi());
                                 respuesta.put("asignacion", asg.getAsignacion());
                                 respuesta.put("fecha_inicio", asg.getFecha_inicio());
                                 respuesta.put("fecha_fin", asg.getFecha_fin());
+                                respuesta.put("fecha_baja", asg.getFecha_baja());
                                 respuesta.put("estado", asg.getEstado());
                                 lista_respuestas.add(respuesta);
 
