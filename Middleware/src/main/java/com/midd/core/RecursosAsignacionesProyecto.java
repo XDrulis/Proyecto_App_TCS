@@ -132,12 +132,15 @@ public class RecursosAsignacionesProyecto {
                 }
         }
 
-       /* @PostMapping("/obtener-asignaciones")
-        public ResponseEntity<?> obtenerAsignaciones(@RequestBody AsignacionProyecto asignacion_proyecto) {
-                List<AsignacionProyecto> listaUltimatix = servicio_asignaciones
-                                .buscarAsignacionUltimatix(asignacion_proyecto.getUltimatix_asi());
-                return new ResponseEntity<>(listaUltimatix, HttpStatus.OK);
-        }*/
+        /*
+         * @PostMapping("/obtener-asignaciones")
+         * public ResponseEntity<?> obtenerAsignaciones(@RequestBody AsignacionProyecto
+         * asignacion_proyecto) {
+         * List<AsignacionProyecto> listaUltimatix = servicio_asignaciones
+         * .buscarAsignacionUltimatix(asignacion_proyecto.getUltimatix_asi());
+         * return new ResponseEntity<>(listaUltimatix, HttpStatus.OK);
+         * }
+         */
 
         @PostMapping("/obtener-asignaciones-ultimatix")
         public ResponseEntity<?> obtenerAsignacionesUltimatix(@RequestBody Perfil perfil) {
@@ -163,6 +166,41 @@ public class RecursosAsignacionesProyecto {
                 }
 
                 return new ResponseEntity<>(lista_respuestas, HttpStatus.OK);
+        }
+
+        @PostMapping("/actualizar-asignacion")
+        public ResponseEntity<?> actualizarAsignacion(@RequestBody AsignacionProyecto asignacion) {
+                AsignacionProyecto asignacion_db = servicio_asignaciones
+                                .buscarAsigancionProyectoId(asignacion.getId_asignacion_proyecto_asg());
+                if (asignacion.getFecha_inicio() != null) {
+                        if (asignacion.getFecha_fin() != null) {
+                                if (asignacion.getFecha_inicio().after(asignacion.getFecha_fin())) {
+                                        return new ResponseEntity<>(respuestas.respuestas(
+                                                        "Fecha inicio no puede ser mayor que la fecha final", "3000"),
+                                                        HttpStatus.BAD_REQUEST);
+                                        
+                                } else {
+                                        asignacion_db.setFecha_inicio(asignacion.getFecha_inicio());
+                                }
+                        }else {
+                                if (asignacion.getFecha_inicio().after(asignacion_db.getFecha_fin())) {
+                                        return new ResponseEntity<>(respuestas.respuestas(
+                                                        "Fecha inicio no puede ser mayor que la fecha final", "3000"),
+                                                        HttpStatus.BAD_REQUEST);
+                                        
+                                } else {
+                                        asignacion_db.setFecha_inicio(asignacion.getFecha_inicio());
+                                }
+                        }
+                }
+                if (asignacion.getFecha_fin() != null) {
+                        asignacion_db.setFecha_fin(asignacion.getFecha_fin());
+                }
+                if (asignacion.getAsignacion() != 0) {
+                        asignacion_db.setAsignacion(asignacion.getAsignacion());
+                }
+
+                return new ResponseEntity<>(asignacion_db, HttpStatus.OK);
         }
 
 }
