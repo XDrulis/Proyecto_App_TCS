@@ -93,8 +93,9 @@ public class RecursosPerfil {
 		serviciosPerfil.agregarPerfil(mio);
 		return new ResponseEntity<>(mio,HttpStatus.OK);
 	}
-	
-	@PostMapping("habilidades")//agregar el nivel
+
+	// Permite editar habilidades y nivel de conocimiento
+	@PostMapping("editarMisHabilidades")
 	public ResponseEntity<?> habilidades(@RequestBody Perfil nuevo){
 		Map<String, Object> response = new HashMap<>();
 		if (serviciosPerfil.buscarPerfilId(nuevo.getId_ultimatix())) {
@@ -103,6 +104,7 @@ public class RecursosPerfil {
 		}
 		Perfil mio = serviciosPerfil.perfilUltimatix(nuevo.getId_ultimatix());
 		mio.setHabilidades(nuevo.getHabilidades());
+		mio.setNivel_habilidad(nuevo.getNivel_habilidad());
 		serviciosPerfil.agregarPerfil(mio);
 		return new ResponseEntity<>(mio,HttpStatus.OK);
 	}
@@ -121,7 +123,6 @@ public class RecursosPerfil {
 	}
 	
 	//Catalogo habilidades
-	
 	@GetMapping("habilidades")// añadir nivel
 	public ResponseEntity<?> habilidades(){
 		List<Habilidades> mis = serviciosPerfil.buscarHabilidades();
@@ -159,10 +160,4 @@ public class RecursosPerfil {
 		return new ResponseEntity<>(response,HttpStatus.OK);
 	}
 	
-	
-
-	// 
-	// 	{nombre:AWS,nivel:medio},
-	// 	{nombre:Azure,nivel:alto}
-	// ]
 }
