@@ -101,8 +101,7 @@ public class ServiciosPerfil {
 				if(habilidad.equals(mis_habilidad)){
 					return false;
 				}
-			}
-			
+			}	
 		}
 		String[] mis_habilidades = mi_perfil.getHabilidades();
 		String[] mis_niveles = mi_perfil.getNivel_habilidad();

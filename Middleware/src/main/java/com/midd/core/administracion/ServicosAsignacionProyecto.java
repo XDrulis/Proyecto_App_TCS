@@ -88,9 +88,6 @@ public class ServicosAsignacionProyecto {
     public boolean validarAsignacion(Long ultimatix, int asignacion){
         Perfil mio = serviciosPerfil.buscarPerfilMio(ultimatix);
         int suma = mio.getAsignacion_usuario() + asignacion;
-        if(suma > 100){
-            return true;
-        }
         return false;
     }
 

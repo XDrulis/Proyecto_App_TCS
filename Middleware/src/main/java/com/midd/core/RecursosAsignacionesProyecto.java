@@ -55,14 +55,6 @@ public class RecursosAsignacionesProyecto {
                                         .respuestas("Usuario ya se encuentra resgistrado en este proyecto", "3000"),
                                         HttpStatus.BAD_REQUEST);
                 }
-                if (servicio_asignaciones.validarAsignacion(asignacion_proyecto.getUltimatix_asi(),
-                                asignacion_proyecto.getAsignacion())) {
-                        logger.warn("Usuario " + asignacion_proyecto.getUltimatix_asi()
-                                        + " no puede tener una asignacion superior al 100%");
-                        return new ResponseEntity<>(respuestas.respuestas(
-                                        "El usuario no puede tener una asignación superior al 100%", "3000"),
-                                        HttpStatus.BAD_REQUEST);
-                }
                 if (asignacion_proyecto.getFecha_inicio().after(asignacion_proyecto.getFecha_fin())) {
                         logger.warn("Fecha inicio no puede ser mayor que la fecha fin");
                         return new ResponseEntity<>(respuestas
@@ -140,12 +132,12 @@ public class RecursosAsignacionesProyecto {
                 }
         }
 
-        @PostMapping("/obtener-asignaciones")
+       /* @PostMapping("/obtener-asignaciones")
         public ResponseEntity<?> obtenerAsignaciones(@RequestBody AsignacionProyecto asignacion_proyecto) {
                 List<AsignacionProyecto> listaUltimatix = servicio_asignaciones
                                 .buscarAsignacionUltimatix(asignacion_proyecto.getUltimatix_asi());
                 return new ResponseEntity<>(listaUltimatix, HttpStatus.OK);
-        }
+        }*/
 
         @PostMapping("/obtener-asignaciones-ultimatix")
         public ResponseEntity<?> obtenerAsignacionesUltimatix(@RequestBody Perfil perfil) {
@@ -155,13 +147,11 @@ public class RecursosAsignacionesProyecto {
                         if (asg.getUltimatix_asi().equals(perfil.getId_ultimatix()) && (asg.getEstado().equals(true))) {
                                 Map<String, Object> respuesta = new HashMap<>();
                                 Equipo buscado = servicio_equipo.buscarEquipoId(asg.getId_equipo_asi());
-                                respuesta.put("id_asignacion_proyecto_asg", asg.getId_asignacion_proyecto_asg());
                                 respuesta.put("nombre_equipo_asi", buscado.getNombre_equipo_asi());
-                                respuesta.put("ultimatix_asi", asg.getUltimatix_asi());
+                                respuesta.put("tipo_equipo_asi", buscado.getTipo_equipo_asi());
                                 respuesta.put("asignacion", asg.getAsignacion());
                                 respuesta.put("fecha_inicio", asg.getFecha_inicio());
                                 respuesta.put("fecha_fin", asg.getFecha_fin());
-                                respuesta.put("fecha_baja", asg.getFecha_baja());
                                 respuesta.put("estado", asg.getEstado());
                                 lista_respuestas.add(respuesta);
 
