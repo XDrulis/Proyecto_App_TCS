@@ -132,15 +132,6 @@ public class RecursosAsignacionesProyecto {
                 }
         }
 
-        /*
-         * @PostMapping("/obtener-asignaciones")
-         * public ResponseEntity<?> obtenerAsignaciones(@RequestBody AsignacionProyecto
-         * asignacion_proyecto) {
-         * List<AsignacionProyecto> listaUltimatix = servicio_asignaciones
-         * .buscarAsignacionUltimatix(asignacion_proyecto.getUltimatix_asi());
-         * return new ResponseEntity<>(listaUltimatix, HttpStatus.OK);
-         * }
-         */
 
         @PostMapping("/obtener-asignaciones-ultimatix")
         public ResponseEntity<?> obtenerAsignacionesUltimatix(@RequestBody Perfil perfil) {
@@ -200,6 +191,7 @@ public class RecursosAsignacionesProyecto {
                         asignacion_db.setAsignacion(asignacion.getAsignacion());
                 }
 
+                servicio_asignaciones.agregarAsignacionProyecto(asignacion_db);
                 return new ResponseEntity<>(asignacion_db, HttpStatus.OK);
         }
 
