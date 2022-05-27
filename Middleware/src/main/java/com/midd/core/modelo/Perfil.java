@@ -27,12 +27,14 @@ public class Perfil implements Serializable{
 	private int asignacion_usuario;
 	@Column(name="nombres_perfil",nullable=true)
 	private String nombres_completos;
+	@Column(name="rol_perfil")
+	private String  rol;
 	
 	public Perfil() {
 	}
 
 	public Perfil(Long id_ultimatix, String sobreMi, String[] habilidades, String[] nivel_habilidad, String usuario_red,
-			int asignacion_usuario, String nombres_completos) {
+			int asignacion_usuario, String nombres_completos, String rol) {
 		this.id_ultimatix = id_ultimatix;
 		this.sobreMi = sobreMi;
 		this.habilidades = habilidades;
@@ -40,6 +42,7 @@ public class Perfil implements Serializable{
 		this.usuario_red = usuario_red;
 		this.asignacion_usuario = asignacion_usuario;
 		this.nombres_completos = nombres_completos;
+		this.rol = rol;
 	}
 
 	public Long getId_ultimatix() {
@@ -97,7 +100,15 @@ public class Perfil implements Serializable{
 	public void setNombres_completos(String nombres_completos) {
 		this.nombres_completos = nombres_completos;
 	}
-	
+
+	public String getRol() {
+		return rol;
+	}
+
+	public void setRol(String rol) {
+		this.rol = rol;
+	}
+
 	
 	
 }

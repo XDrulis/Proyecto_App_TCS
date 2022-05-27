@@ -24,7 +24,7 @@ public class ServiciosAsociados {
 	
 	public Asociado agregarAsociado(Asociado asociado) {
 		String[] qwe = new String[0];
-		perfilRepo.save(new Perfil(asociado.getId_numero_Ultimatix(),"",qwe,qwe,"",0,asociado.getNombre() + " " + asociado.getApellido()));
+		perfilRepo.save(new Perfil(asociado.getId_numero_Ultimatix(),"",qwe,qwe,"",0,asociado.getNombre() + " " + asociado.getApellido(),"user"));
 		return asociadosRepo.save(asociado);
 	}
 

@@ -1378,3 +1378,270 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
+2022-05-27 16:18:15.993  INFO 7364 --- [main] com.midd.core.MiddlewareApplication      : Starting MiddlewareApplication using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 7364 (C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware\target\classes started by user in C:\TCS_Proyecto\middleware_tcs_proyecto)
+2022-05-27 16:18:15.998  INFO 7364 --- [main] com.midd.core.MiddlewareApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-05-27 16:18:17.473  INFO 7364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-27 16:18:17.673  INFO 7364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 173 ms. Found 10 JPA repository interfaces.
+2022-05-27 16:18:18.492  INFO 7364 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$1028407e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-27 16:18:18.586  INFO 7364 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-05-27 16:18:19.408  INFO 7364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-27 16:18:19.435  INFO 7364 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-27 16:18:19.436  INFO 7364 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-27 16:18:19.720  INFO 7364 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-27 16:18:19.721  INFO 7364 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3627 ms
+2022-05-27 16:18:20.555  INFO 7364 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-27 16:18:20.638  INFO 7364 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-27 16:18:20.910  INFO 7364 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-27 16:18:21.149  INFO 7364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-27 16:18:22.337  INFO 7364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-27 16:18:22.385  INFO 7364 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-05-27 16:18:24.355  INFO 7364 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-27 16:18:24.372  INFO 7364 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-27 16:18:25.890  WARN 7364 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-27 16:18:26.285  WARN 7364 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: a461de17-ccf9-42fa-91a1-8ad09f1ab019
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-27 16:18:26.528  INFO 7364 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-27 16:18:27.072  INFO 7364 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-27 16:18:27.452  INFO 7364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-27 16:18:27.504  INFO 7364 --- [main] com.midd.core.MiddlewareApplication      : Started MiddlewareApplication in 12.307 seconds (JVM running for 13.65)
+2022-05-27 16:19:12.153  INFO 7364 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-27 16:19:12.154  INFO 7364 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-27 16:19:12.156  INFO 7364 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-27 16:23:39.524 ERROR 7364 --- [http-nio-8081-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-05-27 16:31:23.209  INFO 3248 --- [main] com.midd.core.MiddlewareApplication      : Starting MiddlewareApplication using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 3248 (C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware\target\classes started by user in C:\TCS_Proyecto\middleware_tcs_proyecto)
+2022-05-27 16:31:23.215  INFO 3248 --- [main] com.midd.core.MiddlewareApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-05-27 16:31:24.730  INFO 3248 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-27 16:31:24.932  INFO 3248 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 179 ms. Found 10 JPA repository interfaces.
+2022-05-27 16:31:25.576  INFO 3248 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$cb0bff32] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-27 16:31:25.667  INFO 3248 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-05-27 16:31:26.722  INFO 3248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-27 16:31:26.745  INFO 3248 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-27 16:31:26.746  INFO 3248 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-27 16:31:26.979  INFO 3248 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-27 16:31:26.980  INFO 3248 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3634 ms
+2022-05-27 16:31:27.604  INFO 3248 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-27 16:31:27.695  INFO 3248 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-27 16:31:27.950  INFO 3248 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-27 16:31:28.167  INFO 3248 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-27 16:31:29.410  INFO 3248 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-27 16:31:29.458  INFO 3248 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-05-27 16:31:31.548  INFO 3248 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-27 16:31:31.560  INFO 3248 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-27 16:31:32.576  WARN 3248 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-27 16:31:32.770  WARN 3248 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2c350c30-7625-47ea-837e-026f62871d2d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-27 16:31:32.971  INFO 3248 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-27 16:31:33.386  INFO 3248 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-27 16:31:33.758  INFO 3248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-27 16:31:33.777  INFO 3248 --- [main] com.midd.core.MiddlewareApplication      : Started MiddlewareApplication in 11.315 seconds (JVM running for 12.119)
+2022-05-27 16:32:13.632  INFO 10188 --- [main] com.midd.core.MiddlewareApplication      : Starting MiddlewareApplication using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 10188 (C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware\target\classes started by user in C:\TCS_Proyecto\middleware_tcs_proyecto)
+2022-05-27 16:32:13.637  INFO 10188 --- [main] com.midd.core.MiddlewareApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-05-27 16:32:14.991  INFO 10188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-27 16:32:15.227  INFO 10188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 191 ms. Found 10 JPA repository interfaces.
+2022-05-27 16:32:15.951  INFO 10188 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$6307ed38] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-27 16:32:16.070  INFO 10188 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-05-27 16:32:17.002  INFO 10188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-27 16:32:17.020  INFO 10188 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-27 16:32:17.021  INFO 10188 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-27 16:32:17.233  INFO 10188 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-27 16:32:17.234  INFO 10188 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3477 ms
+2022-05-27 16:32:17.814  INFO 10188 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-27 16:32:17.919  INFO 10188 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-27 16:32:18.161  INFO 10188 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-27 16:32:18.348  INFO 10188 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-27 16:32:19.573  INFO 10188 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-27 16:32:19.605  INFO 10188 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-05-27 16:32:21.946  INFO 10188 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-27 16:32:21.961  INFO 10188 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-27 16:32:23.004  WARN 10188 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-27 16:32:23.155  WARN 10188 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e72ae172-16de-4364-b620-316fb1c69c47
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-27 16:32:23.317  INFO 10188 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-27 16:32:23.745  INFO 10188 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-27 16:32:24.130  INFO 10188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-27 16:32:24.147  INFO 10188 --- [main] com.midd.core.MiddlewareApplication      : Started MiddlewareApplication in 11.173 seconds (JVM running for 11.914)
+2022-05-27 16:32:52.046  INFO 10188 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-27 16:32:52.048  INFO 10188 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-27 16:32:52.051  INFO 10188 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-05-27 16:32:54.820  INFO 10188 --- [http-nio-8081-exec-1] com.midd.core.RecursosActivos            : El asociado 2254686 se ha registrado exitosamente
+2022-05-27 16:34:25.081  INFO 3888 --- [main] com.midd.core.MiddlewareApplication      : Starting MiddlewareApplication using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 3888 (C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware\target\classes started by user in C:\TCS_Proyecto\middleware_tcs_proyecto)
+2022-05-27 16:34:25.085  INFO 3888 --- [main] com.midd.core.MiddlewareApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-05-27 16:34:26.564  INFO 3888 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-27 16:34:26.726  INFO 3888 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 142 ms. Found 10 JPA repository interfaces.
+2022-05-27 16:34:27.409  INFO 3888 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$6307ed38] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-27 16:34:27.487  INFO 3888 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-05-27 16:34:28.307  INFO 3888 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-27 16:34:28.324  INFO 3888 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-27 16:34:28.324  INFO 3888 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-27 16:34:28.531  INFO 3888 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-27 16:34:28.531  INFO 3888 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3280 ms
+2022-05-27 16:34:29.016  INFO 3888 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-27 16:34:29.091  INFO 3888 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-27 16:34:29.346  INFO 3888 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-27 16:34:29.552  INFO 3888 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-27 16:34:30.695  INFO 3888 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-27 16:34:30.727  INFO 3888 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-05-27 16:34:33.067  INFO 3888 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-27 16:34:33.080  INFO 3888 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-27 16:34:34.149  WARN 3888 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-27 16:34:34.329  WARN 3888 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 8c857fd4-f994-4a6d-b971-daf6a10eb554
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-27 16:34:34.503  INFO 3888 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-27 16:34:34.903  INFO 3888 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-27 16:34:35.255  INFO 3888 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-27 16:34:35.279  INFO 3888 --- [main] com.midd.core.MiddlewareApplication      : Started MiddlewareApplication in 10.909 seconds (JVM running for 11.712)
+2022-05-27 16:34:48.849  INFO 3888 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-27 16:34:48.851  INFO 3888 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-27 16:34:48.854  INFO 3888 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-05-27 16:34:51.336  INFO 3888 --- [http-nio-8081-exec-1] com.midd.core.RecursosActivos            : El asociado 2254686 se ha registrado exitosamente
+2022-05-27 16:35:12.079  WARN 3888 --- [http-nio-8081-exec-3] com.midd.core.RecursosActivos            : El correo fperez@tcs.com ya se encuentra registrado
+2022-05-27 16:35:39.213  INFO 3888 --- [http-nio-8081-exec-5] com.midd.core.RecursosActivos            : El asociado 2254785 se ha registrado exitosamente
+2022-05-27 16:36:18.937  INFO 3888 --- [http-nio-8081-exec-6] com.midd.core.RecursosActivos            : El asociado 2254410 se ha registrado exitosamente
+2022-05-27 16:47:14.430  INFO 12632 --- [main] com.midd.core.MiddlewareApplication      : Starting MiddlewareApplication using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 12632 (C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware\target\classes started by user in C:\TCS_Proyecto\middleware_tcs_proyecto)
+2022-05-27 16:47:14.435  INFO 12632 --- [main] com.midd.core.MiddlewareApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-05-27 16:47:15.817  INFO 12632 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-27 16:47:15.991  INFO 12632 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 153 ms. Found 10 JPA repository interfaces.
+2022-05-27 16:47:16.682  INFO 12632 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$cb0bff32] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-27 16:47:16.757  INFO 12632 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-05-27 16:47:17.696  INFO 12632 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-27 16:47:17.733  INFO 12632 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-27 16:47:17.734  INFO 12632 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-27 16:47:17.949  INFO 12632 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-27 16:47:17.950  INFO 12632 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3397 ms
+2022-05-27 16:47:18.444  INFO 12632 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-27 16:47:18.528  INFO 12632 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-27 16:47:18.777  INFO 12632 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-27 16:47:18.954  INFO 12632 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-27 16:47:20.099  INFO 12632 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-27 16:47:20.145  INFO 12632 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-05-27 16:47:22.065  INFO 12632 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-27 16:47:22.080  INFO 12632 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-27 16:47:23.399  WARN 12632 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-27 16:47:23.602  WARN 12632 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 958e19f9-e564-4019-a11d-d7e484151624
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-27 16:47:23.833  INFO 12632 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-27 16:47:24.402  INFO 12632 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-27 16:47:24.981  INFO 12632 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-27 16:47:25.000  INFO 12632 --- [main] com.midd.core.MiddlewareApplication      : Started MiddlewareApplication in 11.338 seconds (JVM running for 12.333)
+2022-05-27 16:48:09.097  INFO 9432 --- [main] com.midd.core.MiddlewareApplication      : Starting MiddlewareApplication using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 9432 (C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware\target\classes started by user in C:\TCS_Proyecto\middleware_tcs_proyecto)
+2022-05-27 16:48:09.103  INFO 9432 --- [main] com.midd.core.MiddlewareApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-05-27 16:48:10.525  INFO 9432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-27 16:48:10.694  INFO 9432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 149 ms. Found 10 JPA repository interfaces.
+2022-05-27 16:48:11.314  INFO 9432 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$6307ed38] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-27 16:48:11.398  INFO 9432 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-05-27 16:48:12.108  INFO 9432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-27 16:48:12.126  INFO 9432 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-27 16:48:12.128  INFO 9432 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-27 16:48:12.341  INFO 9432 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-27 16:48:12.342  INFO 9432 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3114 ms
+2022-05-27 16:48:12.993  INFO 9432 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-27 16:48:13.081  INFO 9432 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-27 16:48:13.343  INFO 9432 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-27 16:48:13.519  INFO 9432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-27 16:48:14.577  INFO 9432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-27 16:48:14.610  INFO 9432 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-05-27 16:48:16.374  INFO 9432 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-27 16:48:16.388  INFO 9432 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-27 16:48:17.299  WARN 9432 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-27 16:48:17.448  WARN 9432 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: fa357249-dca3-486a-9538-30e015a6d97e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-27 16:48:17.644  INFO 9432 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-27 16:48:18.241  INFO 9432 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-27 16:48:18.633  INFO 9432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-27 16:48:18.660  INFO 9432 --- [main] com.midd.core.MiddlewareApplication      : Started MiddlewareApplication in 10.475 seconds (JVM running for 11.399)
+2022-05-27 16:50:47.229  INFO 6040 --- [main] com.midd.core.MiddlewareApplication      : Starting MiddlewareApplication using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 6040 (C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware\target\classes started by user in C:\TCS_Proyecto\middleware_tcs_proyecto)
+2022-05-27 16:50:47.235  INFO 6040 --- [main] com.midd.core.MiddlewareApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-05-27 16:50:48.752  INFO 6040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-27 16:50:48.986  INFO 6040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 205 ms. Found 10 JPA repository interfaces.
+2022-05-27 16:50:49.627  INFO 6040 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$6307ed38] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-27 16:50:49.713  INFO 6040 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-05-27 16:50:50.527  INFO 6040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-27 16:50:50.550  INFO 6040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-27 16:50:50.551  INFO 6040 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-27 16:50:50.776  INFO 6040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-27 16:50:50.778  INFO 6040 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3438 ms
+2022-05-27 16:50:51.284  INFO 6040 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-27 16:50:51.358  INFO 6040 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-27 16:50:51.623  INFO 6040 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-27 16:50:51.831  INFO 6040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-27 16:50:53.030  INFO 6040 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-27 16:50:53.067  INFO 6040 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-05-27 16:50:54.792  INFO 6040 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-27 16:50:54.803  INFO 6040 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-27 16:50:55.649  WARN 6040 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-27 16:50:55.770  WARN 6040 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 889bac57-5063-410f-8240-e3569a0acd33
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-27 16:50:55.969  INFO 6040 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-27 16:50:56.543  INFO 6040 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-27 16:50:57.086  INFO 6040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-27 16:50:57.106  INFO 6040 --- [main] com.midd.core.MiddlewareApplication      : Started MiddlewareApplication in 10.6 seconds (JVM running for 11.345)
+2022-05-27 16:51:29.385  INFO 6040 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-27 16:51:29.386  INFO 6040 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-27 16:51:29.388  INFO 6040 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

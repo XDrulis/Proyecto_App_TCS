@@ -111,7 +111,6 @@ public class RecursosPerfil {
 	
 	@PostMapping("usuarioRed")
 	public ResponseEntity<?> usuarioRed(@RequestBody Perfil nuevo){
-		Map<String, Object> response = new HashMap<>();
 		if (serviciosPerfil.buscarPerfilId(nuevo.getId_ultimatix())) {
 			logger.warn("El asociado "+ nuevo.getId_ultimatix() +" no se encuentra registrado");
 			return new ResponseEntity<>(respuestas.respuestas("Usuario no registrado", "2031"),HttpStatus.BAD_REQUEST);
@@ -159,5 +158,18 @@ public class RecursosPerfil {
 		
 		return new ResponseEntity<>(response,HttpStatus.OK);
 	}
+
+	@PostMapping("actualizar-rol")
+	public ResponseEntity<?> actualizarRol(@RequestBody Perfil perfil) {
+		Perfil perfil_bd = serviciosPerfil.perfilUltimatix(perfil.getId_ultimatix());
+		if(perfil_bd.getRol().equals("user")){
+			perfil_bd.setRol("admin");
+		}else{
+			perfil_bd.setRol("user");
+		}
+		serviciosPerfil.agregarPerfil(perfil_bd);
+		return new ResponseEntity<>(respuestas.respuestas("El usuario con ultimatix: " + perfil.getId_ultimatix() + " cambio de rol ", "200"),HttpStatus.OK);
+	}
+	
 	
 }
