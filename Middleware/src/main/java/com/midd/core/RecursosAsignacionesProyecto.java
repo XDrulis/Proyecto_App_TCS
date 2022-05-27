@@ -132,13 +132,14 @@ public class RecursosAsignacionesProyecto {
                 }
         }
 
-
         @PostMapping("/obtener-asignaciones-ultimatix")
         public ResponseEntity<?> obtenerAsignacionesUltimatix(@RequestBody Perfil perfil) {
-
+                System.out.println("OBTENER ASIGNACION POR ULTIMATIX");
                 List<Map<String, Object>> lista_respuestas = new ArrayList<>();
                 for (AsignacionProyecto asg : servicio_asignaciones.buscarTodasAsignacionesProyecto()) {
+                        
                         if (asg.getUltimatix_asi().equals(perfil.getId_ultimatix())) {
+                                System.out.println("OBTENER ASIGNACION POR ULTIMATIX " + asg.getUltimatix_asi());
                                 Map<String, Object> respuesta = new HashMap<>();
                                 Equipo buscado = servicio_equipo.buscarEquipoId(asg.getId_equipo_asi());
                                 respuesta.put("id_asignacion_proyecto_asi", asg.getId_asignacion_proyecto_asg());
@@ -152,9 +153,11 @@ public class RecursosAsignacionesProyecto {
                                 respuesta.put("fecha_baja", asg.getFecha_baja());
                                 respuesta.put("estado", asg.getEstado());
                                 lista_respuestas.add(respuesta);
-
+                                System.out.println("RESPUESTA " + lista_respuestas);
                         }
                 }
+
+                System.out.println("RESPUESTA " + lista_respuestas);
 
                 return new ResponseEntity<>(lista_respuestas, HttpStatus.OK);
         }
@@ -163,29 +166,15 @@ public class RecursosAsignacionesProyecto {
         public ResponseEntity<?> actualizarAsignacion(@RequestBody AsignacionProyecto asignacion) {
                 AsignacionProyecto asignacion_db = servicio_asignaciones
                                 .buscarAsigancionProyectoId(asignacion.getId_asignacion_proyecto_asg());
-                if (asignacion.getFecha_inicio() != null) {
-                        if (asignacion.getFecha_fin() != null) {
-                                if (asignacion.getFecha_inicio().after(asignacion.getFecha_fin())) {
-                                        return new ResponseEntity<>(respuestas.respuestas(
-                                                        "Fecha inicio no puede ser mayor que la fecha final", "3000"),
-                                                        HttpStatus.BAD_REQUEST);
-                                        
-                                } else {
-                                        asignacion_db.setFecha_inicio(asignacion.getFecha_inicio());
-                                }
-                        }else {
-                                if (asignacion.getFecha_inicio().after(asignacion_db.getFecha_fin())) {
-                                        return new ResponseEntity<>(respuestas.respuestas(
-                                                        "Fecha inicio no puede ser mayor que la fecha final", "3000"),
-                                                        HttpStatus.BAD_REQUEST);
-                                        
-                                } else {
-                                        asignacion_db.setFecha_inicio(asignacion.getFecha_inicio());
-                                }
-                        }
-                }
                 if (asignacion.getFecha_fin() != null) {
-                        asignacion_db.setFecha_fin(asignacion.getFecha_fin());
+                        if (asignacion_db.getFecha_inicio().after(asignacion.getFecha_fin())) {
+                                return new ResponseEntity<>(respuestas.respuestas(
+                                                "Fecha inicio no puede ser mayor que la fecha final", "3000"),
+                                                HttpStatus.BAD_REQUEST);
+
+                        } else {
+                                asignacion_db.setFecha_fin(asignacion.getFecha_fin());
+                        }
                 }
                 if (asignacion.getAsignacion() != 0) {
                         asignacion_db.setAsignacion(asignacion.getAsignacion());
