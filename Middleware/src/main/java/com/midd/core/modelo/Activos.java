@@ -33,13 +33,13 @@ public class Activos implements Serializable {
 	@Column(name="hostname_ac",nullable=false)
 	private String 	hostname;
 	
-	@Column(name="direccion_mac_ac",nullable=false)
+	@Column(name="direccion_mac_ac",nullable=true)
 	private String 	direccion_mac;
 	
-	@Column(name="direccion_ip_ac",nullable=false)
+	@Column(name="direccion_ip_ac",nullable=true)
 	private String 	direccion_ip;
 	
-	@Column(name="ip_reservada_ac",nullable=false)
+	@Column(name="ip_reservada_ac",nullable=true)
 	private boolean	reservada_ip;
 
 	@Column(name="marca_ac", nullable = false)

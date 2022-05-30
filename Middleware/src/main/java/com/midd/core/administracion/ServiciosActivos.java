@@ -39,8 +39,11 @@ public class ServiciosActivos {
 	
 	public boolean validarMAC_repetida(String mac) {
 		List<Activos> activos = activosRepo.findAll();
+		if(activos.isEmpty()){
+			return false;
+		}
 		for (Activos iterante : activos) {
-			if ((iterante.getDireccion_mac().equals(mac))&&(!iterante.isEstado()&&(!iterante.isBorrado_logico()))) {
+			if ((iterante.getDireccion_mac() == mac )&&(!iterante.isEstado()&&(!iterante.isBorrado_logico()))) {
 				return false;
 			}
 		}
@@ -89,8 +92,11 @@ public class ServiciosActivos {
 	
 	public boolean validarIPrepetida(String ip) {
 		List<Activos> activos = activosRepo.findAll();
+		if(activos.isEmpty()){
+			return false;
+		}
 		for (Activos iterante : activos) {
-			if ((iterante.getDireccion_ip().equals(ip))&&(!iterante.isEstado()&&(!iterante.isBorrado_logico()))) {
+			if ((iterante.getDireccion_ip() == ip)&&(!iterante.isEstado()&&(!iterante.isBorrado_logico()))) {
 				return false;
 			}
 		}
