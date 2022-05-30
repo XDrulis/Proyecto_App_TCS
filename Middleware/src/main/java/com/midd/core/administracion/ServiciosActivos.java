@@ -3,6 +3,7 @@ package com.midd.core.administracion;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,7 +37,7 @@ public class ServiciosActivos {
 		return activosRepo.save(activo);
 	}
 	
-	public boolean validarMAC(String mac) {
+	public boolean validarMAC_repetida(String mac) {
 		List<Activos> activos = activosRepo.findAll();
 		for (Activos iterante : activos) {
 			if ((iterante.getDireccion_mac().equals(mac))&&(!iterante.isEstado()&&(!iterante.isBorrado_logico()))) {
@@ -45,8 +46,48 @@ public class ServiciosActivos {
 		}
 		return true;
 	}
+
+	public boolean isValidIPAddress(String ip){
+		String zeroTo255 = 
+			  "(\\d{1,2}|(0|1)\\"
+			+ "d{2}|2[0-4]\\d|25[0-5])";
+
+		String regex =
+			  zeroTo255 + "\\."
+			  + zeroTo255 + "\\."
+			  + zeroTo255 + "\\."
+			  + zeroTo255;
+
+		Pattern pattern = Pattern.compile(regex);
+
+		if (ip == null) {
+			return false;
+		}
+
+		Matcher matcher = pattern.matcher(ip);
+		return matcher.matches();
+	}
 	
-	public boolean validarIP(String ip) {
+	public boolean isValidMacAddress(String mac){
+	String regex = "^([0-9A-Fa-f]{2}[:-])"
+						+ "{5}([0-9A-Fa-f]{2})|"
+						+ "([0-9a-fA-F]{4}\\."
+						+ "[0-9a-fA-F]{4}\\."
+						+ "[0-9a-fA-F]{4})$";
+
+		Pattern pattern = Pattern.compile(regex);
+
+		if (mac == null) {
+			return false;
+		}
+
+		Matcher matcher = pattern.matcher(mac);
+
+		return matcher.matches();
+	}
+
+	
+	public boolean validarIPrepetida(String ip) {
 		List<Activos> activos = activosRepo.findAll();
 		for (Activos iterante : activos) {
 			if ((iterante.getDireccion_ip().equals(ip))&&(!iterante.isEstado()&&(!iterante.isBorrado_logico()))) {
