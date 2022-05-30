@@ -43,7 +43,6 @@ public class RecursosActivos {
 			logger.warn("El activo " + activo.getId_activo() + " ya se encuentra registrado");
 			return new ResponseEntity<>(respuestas.respuestas("Activo ya registrado", "2001"), HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
-			System.out.println(activo.getDireccion_mac());
 			if(activo.getTipo().equals("CPU/Portatil")){
 				if (!serviciosActivos.validarMAC_repetida(activo.getDireccion_mac())) {
 					logger.warn("La MAC " + activo.getDireccion_mac() + " ya se encuentra registrada");
@@ -65,6 +64,7 @@ public class RecursosActivos {
 			}
 			activo.setBorrado_logico(false);
 			activo.setEstado(false);
+			System.out.println(activo.getFecha_entrega());
 			activo.setFecha_registro(Date.valueOf(LocalDate.now(ZoneId.of("GMT-05:00"))));
 			LocalDate uno = activo.getFecha_entrega().toLocalDate();
 			activo.setFecha_entrega(Date.valueOf(uno));

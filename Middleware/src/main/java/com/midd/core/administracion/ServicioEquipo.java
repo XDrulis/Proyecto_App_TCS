@@ -51,7 +51,7 @@ public class ServicioEquipo {
     }
 
     public Equipo eliminarEquipo(Equipo equipo){
-        equipo.setEstado_asi(false);
+        equipo.setEstado_asi(!equipo.isEstado_asi());
         return this.equipo_Repo.save(equipo);
     }
 

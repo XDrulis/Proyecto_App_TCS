@@ -69,7 +69,11 @@ public class ServiciosAsociados {
 	}
 	
 	public List<Asociado> buscarTodo(){
-		return asociadosRepo.findAll();
+		List<Asociado> asociados = asociadosRepo.findAll();
+		for (Asociado iterante : asociados) {
+			iterante.setClave(null);
+		}
+		return asociados;
 	}
 	
 	

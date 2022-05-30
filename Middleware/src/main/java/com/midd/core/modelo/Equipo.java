@@ -123,7 +123,5 @@ public class Equipo {
     public void setEstado_asi(boolean estado_asi) {
         this.estado_asi = estado_asi;
     }
-
-    
     
 }

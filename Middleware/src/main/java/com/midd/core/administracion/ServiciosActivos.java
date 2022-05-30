@@ -43,7 +43,7 @@ public class ServiciosActivos {
 			return false;
 		}
 		for (Activos iterante : activos) {
-			if ((iterante.getDireccion_mac() == mac )&&(!iterante.isEstado()&&(!iterante.isBorrado_logico()))) {
+			if ((iterante.getDireccion_mac().equals(mac))&&(!iterante.isEstado()&&(!iterante.isBorrado_logico()))) {
 				return false;
 			}
 		}
@@ -72,7 +72,7 @@ public class ServiciosActivos {
 	}
 	
 	public boolean isValidMacAddress(String mac){
-	String regex = "^([0-9A-Fa-f]{2}[:-])"
+		String regex = "^([0-9A-Fa-f]{2}[:-])"
 						+ "{5}([0-9A-Fa-f]{2})|"
 						+ "([0-9a-fA-F]{4}\\."
 						+ "[0-9a-fA-F]{4}\\."
@@ -96,7 +96,7 @@ public class ServiciosActivos {
 			return false;
 		}
 		for (Activos iterante : activos) {
-			if ((iterante.getDireccion_ip() == ip)&&(!iterante.isEstado()&&(!iterante.isBorrado_logico()))) {
+			if ((iterante.getDireccion_ip().equals(ip))&&(!iterante.isEstado()&&(!iterante.isBorrado_logico()))) {
 				return false;
 			}
 		}

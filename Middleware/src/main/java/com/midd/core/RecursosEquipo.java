@@ -65,7 +65,8 @@ public class RecursosEquipo {
         try {
             Equipo equipos = servicio_equipo.buscarEquipoId(equipo.getId_asi());
             servicio_equipo.eliminarEquipo(equipos);
-            return new ResponseEntity<>(equipos, HttpStatus.OK);
+            List<Equipo> equipos_list = servicio_equipo.buscarTodosEquipos();
+            return new ResponseEntity<>(equipos_list, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(respuestas.respuestas("El equipo no existe", "3001"), HttpStatus.BAD_REQUEST);
         }

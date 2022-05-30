@@ -57,11 +57,6 @@ public class RecursosAsociados {
 			return new ResponseEntity<>(respuestas.respuestas("Usuario ya registrado","1001"),HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
 			asociado.setClave(cifrarClave.encode(asociado.getClave()));
-			/*if(asociado.getRol()==null) {
-				asociado.setRol("user");
-			}else {
-				asociado.setRol("admin");
-			}*/
 			if(serviciosAsociados.validarCorreo(asociado)==false) {
 				logger.warn("El correo "+ asociado.getCorreo() +" ya se encuentra registrado");
 				return new ResponseEntity<>(respuestas.respuestas("Correo ya registrado","1002"),HttpStatus.BAD_REQUEST);

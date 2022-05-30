@@ -134,12 +134,10 @@ public class RecursosAsignacionesProyecto {
 
         @PostMapping("/obtener-asignaciones-ultimatix")
         public ResponseEntity<?> obtenerAsignacionesUltimatix(@RequestBody Perfil perfil) {
-                System.out.println("OBTENER ASIGNACION POR ULTIMATIX");
                 List<Map<String, Object>> lista_respuestas = new ArrayList<>();
                 for (AsignacionProyecto asg : servicio_asignaciones.buscarTodasAsignacionesProyecto()) {
                         
                         if (asg.getUltimatix_asi().equals(perfil.getId_ultimatix())) {
-                                System.out.println("OBTENER ASIGNACION POR ULTIMATIX " + asg.getUltimatix_asi());
                                 Map<String, Object> respuesta = new HashMap<>();
                                 Equipo buscado = servicio_equipo.buscarEquipoId(asg.getId_equipo_asi());
                                 respuesta.put("id_asignacion_proyecto_asi", asg.getId_asignacion_proyecto_asg());
@@ -156,8 +154,6 @@ public class RecursosAsignacionesProyecto {
                                 System.out.println("RESPUESTA " + lista_respuestas);
                         }
                 }
-
-                System.out.println("RESPUESTA " + lista_respuestas);
 
                 return new ResponseEntity<>(lista_respuestas, HttpStatus.OK);
         }
