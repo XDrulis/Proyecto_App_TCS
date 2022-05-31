@@ -89,9 +89,4 @@ public class ServicioEquipo {
         return mio;
     }
 
-    /*public List<TipoProyecto> catalogoEquipos(Equipo ){
-        TipoProyecto
-        return null;
-    }*/
-
 }

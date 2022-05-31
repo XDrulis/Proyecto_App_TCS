@@ -155,4 +155,8 @@ public class ServicosAsignacionProyecto {
         }
         return listaProyectos;
     }
+
+    public List<AsignacionProyecto> buscarAsignaciones(){
+        return asignaciones_proyecto_repo.findAll();
+    }
 }

@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
 @RestController
 @CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST })
 @RequestMapping("/equipos")
@@ -27,7 +26,9 @@ public class RecursosEquipo {
     private final ServicioEquipo servicio_equipo;
     private final Respuestas respuestas;
     private final ServicioCatalogoTipoProyecto servicioCatalogoTipoProyecto;
-    public RecursosEquipo(ServicioEquipo servicio_equipo, Respuestas respuestas, ServicioCatalogoTipoProyecto servicioCatalogoTipoProyecto) {
+
+    public RecursosEquipo(ServicioEquipo servicio_equipo, Respuestas respuestas,
+            ServicioCatalogoTipoProyecto servicioCatalogoTipoProyecto) {
         this.servicio_equipo = servicio_equipo;
         this.respuestas = respuestas;
         this.servicioCatalogoTipoProyecto = servicioCatalogoTipoProyecto;
@@ -38,7 +39,8 @@ public class RecursosEquipo {
 
         if (!servicio_equipo.buscarEquipos(equipo)) {
             servicio_equipo.agregarEquipo(equipo);
-            return new ResponseEntity<>(equipo, HttpStatus.OK);
+            List<Equipo> equipos_list = servicio_equipo.buscarTodosEquipos();
+            return new ResponseEntity<>(equipos_list, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(respuestas.respuestas("Equipo ya registrado", "3001"), HttpStatus.BAD_REQUEST);
         }
@@ -53,9 +55,12 @@ public class RecursosEquipo {
             servicio_equipo.actualizarEquipo(equipo);
             equipos.setNombre_lider(equipo.getNombre_lider());
             equipos.setNombre_tecnico(equipo.getNombre_tecnico());
-            return new ResponseEntity<>(equipos, HttpStatus.OK);
+
+            List<Equipo> equipos_list = servicio_equipo.buscarTodosEquipos();
+            return new ResponseEntity<>(equipos_list, HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>(respuestas.respuestas("No has editado el registro", "3001"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(respuestas.respuestas("No has editado el registro", "3001"),
+                    HttpStatus.BAD_REQUEST);
         }
 
     }
@@ -103,7 +108,9 @@ public class RecursosEquipo {
 
         List<Equipo> equipos = servicio_equipo.listaEquipo(equipo.getTipo_equipo_asi());
         if (equipos.isEmpty()) {
-            return new ResponseEntity<>(respuestas.respuestas("Ningún equipo coincide con la asignación ingresad", "3001"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(
+                    respuestas.respuestas("Ningún equipo coincide con la asignación ingresad", "3001"),
+                    HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(equipos, HttpStatus.OK);
     }
@@ -112,8 +119,5 @@ public class RecursosEquipo {
     public ResponseEntity<List<TipoProyecto>> obtenerTIpoEquipos() {
         return new ResponseEntity<>(this.servicioCatalogoTipoProyecto.obtenerTiposProyectos(), HttpStatus.OK);
     }
-    
 
-
-    
 }

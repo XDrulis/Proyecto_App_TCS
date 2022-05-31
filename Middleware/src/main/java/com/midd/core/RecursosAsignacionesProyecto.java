@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.midd.core.administracion.ServicioEquipo;
+import com.midd.core.administracion.ServiciosPerfil;
 import com.midd.core.administracion.ServicosAsignacionProyecto;
 import com.midd.core.modelo.AsignacionProyecto;
 import com.midd.core.modelo.Equipo;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.midd.core.Respuestas.Respuestas;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST })
@@ -32,15 +34,16 @@ public class RecursosAsignacionesProyecto {
         private final ServicosAsignacionProyecto servicio_asignaciones;
         private final Respuestas respuestas;
         private final ServicioEquipo servicio_equipo;
-
+        private final ServiciosPerfil servicioPerfil;
         Logger logger = LoggerFactory.getLogger(RecursosAsignacionesProyecto.class);
 
         @Autowired
         public RecursosAsignacionesProyecto(ServicosAsignacionProyecto servicio_asignaciones, Respuestas respuestas,
-                        ServicioEquipo servicio_equipo) {
+                        ServicioEquipo servicio_equipo, ServiciosPerfil servicioPerfil) {
                 this.servicio_asignaciones = servicio_asignaciones;
                 this.respuestas = respuestas;
                 this.servicio_equipo = servicio_equipo;
+                this.servicioPerfil = servicioPerfil;
         }
 
         @PostMapping("/agregar-asignacion-proyecto")
@@ -65,18 +68,8 @@ public class RecursosAsignacionesProyecto {
                                 asignacion_proyecto.getId_equipo_asi(), asignacion_proyecto.getAsignacion());
                 asignacion_proyecto.setEstado(true);
                 servicio_asignaciones.agregarAsignacionProyecto(asignacion_proyecto);
-                Map<String, Object> respuesta = new HashMap<>();
-                Equipo buscado = servicio_equipo.buscarEquipoId(asignacion_proyecto.getId_equipo_asi());
-                respuesta.put("id_asignacion_proyecto_asg", asignacion_proyecto.getId_asignacion_proyecto_asg());
-                respuesta.put("nombre_equipo_asi", buscado.getNombre_equipo_asi());
-                respuesta.put("ultimatix_asi", asignacion_proyecto.getUltimatix_asi());
-                respuesta.put("asignacion", asignacion_proyecto.getAsignacion());
-                respuesta.put("fecha_inicio", asignacion_proyecto.getFecha_inicio());
-                respuesta.put("fecha_fin", asignacion_proyecto.getFecha_fin());
-                respuesta.put("fecha_baja", asignacion_proyecto.getFecha_baja());
-                respuesta.put("estado", asignacion_proyecto.getEstado());
-
-                return new ResponseEntity<>(respuesta, HttpStatus.OK);
+                Perfil mio = servicioPerfil.buscarPerfilMio(asignacion_proyecto.getUltimatix_asi());
+                return obtenerAsignacionesUltimatix(mio);
         }
 
         @PostMapping("/actualizar-Fecha-fin")
@@ -92,8 +85,12 @@ public class RecursosAsignacionesProyecto {
                                                 HttpStatus.BAD_REQUEST);
                         }
                         mi.setFecha_fin(asignacion_proyecto.getFecha_fin());
-                        servicio_asignaciones.agregarAsignacionProyecto(mi);
-                        return new ResponseEntity<>(mi, HttpStatus.OK);
+                        Perfil mio = servicioPerfil.buscarPerfilMio(asignacion_proyecto.getUltimatix_asi());
+                        return obtenerAsignacionesUltimatix(mio);
+                        /*
+                         * servicio_asignaciones.agregarAsignacionProyecto(mi);
+                         * return new ResponseEntity<>(mi, HttpStatus.OK);
+                         */
 
                 } catch (Exception e) {
                         logger.warn("La asignación " + asignacion_proyecto.getId_asignacion_proyecto_asg()
@@ -122,7 +119,8 @@ public class RecursosAsignacionesProyecto {
                         servicio_asignaciones.quitarMiembroEquipo(mi.getUltimatix_asi(),
                                         mi.getId_equipo_asi());
                         servicio_asignaciones.agregarAsignacionProyecto(mi);
-                        return new ResponseEntity<>(mi, HttpStatus.OK);
+                        Perfil mio = servicioPerfil.buscarPerfilMio(asignacion_proyecto.getUltimatix_asi());
+                        return obtenerAsignacionesUltimatix(mio);
 
                 } catch (Exception e) {
                         logger.warn("La asignación " + asignacion_proyecto.getId_asignacion_proyecto_asg()
@@ -136,7 +134,7 @@ public class RecursosAsignacionesProyecto {
         public ResponseEntity<?> obtenerAsignacionesUltimatix(@RequestBody Perfil perfil) {
                 List<Map<String, Object>> lista_respuestas = new ArrayList<>();
                 for (AsignacionProyecto asg : servicio_asignaciones.buscarTodasAsignacionesProyecto()) {
-                        
+
                         if (asg.getUltimatix_asi().equals(perfil.getId_ultimatix())) {
                                 Map<String, Object> respuesta = new HashMap<>();
                                 Equipo buscado = servicio_equipo.buscarEquipoId(asg.getId_equipo_asi());
@@ -151,7 +149,6 @@ public class RecursosAsignacionesProyecto {
                                 respuesta.put("fecha_baja", asg.getFecha_baja());
                                 respuesta.put("estado", asg.getEstado());
                                 lista_respuestas.add(respuesta);
-                                System.out.println("RESPUESTA " + lista_respuestas);
                         }
                 }
 
@@ -172,12 +169,44 @@ public class RecursosAsignacionesProyecto {
                                 asignacion_db.setFecha_fin(asignacion.getFecha_fin());
                         }
                 }
+                Perfil mio = servicioPerfil.buscarPerfilMio(asignacion_db.getUltimatix_asi());
+
                 if (asignacion.getAsignacion() != 0) {
+                        int asignacion_user = mio.getAsignacion_usuario() - asignacion_db.getAsignacion();
+                        mio.setAsignacion_usuario(asignacion_user + asignacion.getAsignacion());
                         asignacion_db.setAsignacion(asignacion.getAsignacion());
                 }
-
+                servicioPerfil.actualizarAsignacion(mio);
                 servicio_asignaciones.agregarAsignacionProyecto(asignacion_db);
-                return new ResponseEntity<>(asignacion_db, HttpStatus.OK);
+
+                return obtenerAsignacionesUltimatix(mio);
+        }
+
+        @GetMapping("/buscar-asignaciones")
+        public ResponseEntity<?> buscarAsignaciones() {
+                List<Map<String, Object>> lista_respuestas = new ArrayList<>();
+                for (AsignacionProyecto asg : servicio_asignaciones.buscarTodasAsignacionesProyecto()) {
+                        for (Equipo equipo : servicio_equipo.buscarTodosEquipos()) {
+                                if (equipo.getId_asi().equals(asg.getId_equipo_asi())) {
+                                        Map<String, Object> respuesta = new HashMap<>();
+                                        respuesta.put("id_asignacion_proyecto_asi",
+                                                        asg.getId_asignacion_proyecto_asg());
+                                        respuesta.put("id_equipo", asg.getId_equipo_asi());
+                                        respuesta.put("nombre_equipo_asi", equipo.getNombre_equipo_asi());
+                                        respuesta.put("tipo_equipo_asi", equipo.getTipo_equipo_asi());
+                                        respuesta.put("ultimatix_asi", asg.getUltimatix_asi());
+                                        respuesta.put("asignacion", asg.getAsignacion());
+                                        respuesta.put("fecha_inicio", asg.getFecha_inicio());
+                                        respuesta.put("fecha_fin", asg.getFecha_fin());
+                                        respuesta.put("fecha_baja", asg.getFecha_baja());
+                                        respuesta.put("estado", asg.getEstado());
+                                        lista_respuestas.add(respuesta);
+                                }
+                        }
+                        // Equipo buscado = servicio_equipo.buscarEquipoId(asg.getId_equipo_asi());
+
+                }
+                return new ResponseEntity<>(lista_respuestas, HttpStatus.OK);
         }
 
 }
