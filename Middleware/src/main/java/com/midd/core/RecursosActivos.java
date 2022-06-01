@@ -44,13 +44,14 @@ public class RecursosActivos {
 			return new ResponseEntity<>(respuestas.respuestas("Activo ya registrado", "2001"), HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
 			if(activo.getTipo().equals("CPU/Portatil")){
+				System.out.println("Direccion mac capturada --> " + activo.getDireccion_mac());
 				if (!serviciosActivos.validarMAC_repetida(activo.getDireccion_mac())) {
 					logger.warn("La MAC " + activo.getDireccion_mac() + " ya se encuentra registrada");
 					return new ResponseEntity<>(respuestas.respuestas("MAC ya registrada", "2002"), HttpStatus.BAD_REQUEST);
 				}
 				if (!serviciosActivos.isValidMacAddress(activo.getDireccion_mac())) {
 					logger.warn("La MAC " + activo.getDireccion_mac() + " ya se encuentra registrada");
-					return new ResponseEntity<>(respuestas.respuestas("MAC no valida", "2004"), HttpStatus.BAD_REQUEST);
+					return new ResponseEntity<>(respuestas.respuestas("MAC no válida", "2004"), HttpStatus.BAD_REQUEST);
 				}
 				
 				if (!serviciosActivos.validarIPrepetida(activo.getDireccion_ip())) {
@@ -59,7 +60,7 @@ public class RecursosActivos {
 				}
 				if (!serviciosActivos.isValidIPAddress(activo.getDireccion_ip())) {
 					
-					return new ResponseEntity<>(respuestas.respuestas("IP no es valida", "2005"), HttpStatus.BAD_REQUEST);
+					return new ResponseEntity<>(respuestas.respuestas("IP no válida", "2005"), HttpStatus.BAD_REQUEST);
 				}
 			}
 			activo.setBorrado_logico(false);

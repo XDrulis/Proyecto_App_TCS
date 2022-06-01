@@ -52,10 +52,10 @@ public class RecursosAsignacionesProyecto {
                                 asignacion_proyecto.getId_equipo_asi())) {
 
                         logger.warn("Usuario " + asignacion_proyecto.getUltimatix_asi()
-                                        + " ya se encuentra registrado en el proyecto "
+                                        + " ya se encuentra registrado en este proyecto "
                                         + asignacion_proyecto.getId_equipo_asi());
                         return new ResponseEntity<>(respuestas
-                                        .respuestas("Usuario ya se encuentra resgistrado en este proyecto", "3000"),
+                                        .respuestas("Usuario ya se encuentra registrado en este proyecto", "3000"),
                                         HttpStatus.BAD_REQUEST);
                 }
                 if (asignacion_proyecto.getFecha_inicio().after(asignacion_proyecto.getFecha_fin())) {
@@ -107,9 +107,15 @@ public class RecursosAsignacionesProyecto {
                         AsignacionProyecto mi = servicio_asignaciones.buscarAsigancionProyectoId(
                                         asignacion_proyecto.getId_asignacion_proyecto_asg());
                         if (mi.getFecha_inicio().after(asignacion_proyecto.getFecha_baja())) {
-                                logger.warn("Fecha inicio no puede ser mayor que la fecha fin");
+                                logger.warn("Fecha inicio no puede ser mayor que la fecha de baja");
                                 return new ResponseEntity<>(respuestas.respuestas(
                                                 "Fecha inicio no puede ser mayor que la fecha de baja", "3000"),
+                                                HttpStatus.BAD_REQUEST);
+                        }
+                        if (mi.getFecha_fin().before(asignacion_proyecto.getFecha_baja())) {
+                                logger.warn("Fecha fin no puede ser mayor que la fecha baja");
+                                return new ResponseEntity<>(respuestas.respuestas(
+                                                "Fecha fin no puede ser mayor que la fecha de baja", "3000"),
                                                 HttpStatus.BAD_REQUEST);
                         }
                         mi.setFecha_baja(asignacion_proyecto.getFecha_baja());
@@ -119,8 +125,9 @@ public class RecursosAsignacionesProyecto {
                         servicio_asignaciones.quitarMiembroEquipo(mi.getUltimatix_asi(),
                                         mi.getId_equipo_asi());
                         servicio_asignaciones.agregarAsignacionProyecto(mi);
-                        Perfil mio = servicioPerfil.buscarPerfilMio(asignacion_proyecto.getUltimatix_asi());
-                        return obtenerAsignacionesUltimatix(mio);
+                        Equipo equipo = servicio_equipo.buscarEquipoMio(mi.getId_equipo_asi());
+                        return new ResponseEntity<>(respuestas.respuestas("Tu salida del proyecto " + equipo.getNombre_equipo_asi() + ", fue exitosa", "2000"),
+                                        HttpStatus.BAD_REQUEST);
 
                 } catch (Exception e) {
                         logger.warn("La asignación " + asignacion_proyecto.getId_asignacion_proyecto_asg()

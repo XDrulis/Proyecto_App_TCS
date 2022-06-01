@@ -108,11 +108,11 @@ public class RecursosAsociados {
 			nuevo = serviciosAsociados.buscarAsociadoPorId(asociado.getId_numero_Ultimatix());
 		} catch (Exception e) {
 			logger.warn("El asociado "+ asociado.getId_numero_Ultimatix() +" no se encuentra registrado");
-			return new ResponseEntity<>(respuestas.respuestas("Usuario no registrado","1011"),HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(respuestas.respuestas("Usuario o contraseña incorrecta","1012"),HttpStatus.BAD_REQUEST);
 		}				
 		if (cifrarClave.matches(asociado.getClave(), nuevo.getClave())==false) {
 			logger.warn("La contraseña ingresada de "+ asociado.getId_numero_Ultimatix() +" es incorrecta");
-			return new ResponseEntity<>(respuestas.respuestas("Contraseña incorrecta","1012"),HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(respuestas.respuestas("Usuario o contraseña incorrecta","1012"),HttpStatus.BAD_REQUEST);
 		}
 		logger.info("El asociado "+ asociado.getId_numero_Ultimatix() +" ha igresado exitosamente");
 		nuevo.setClave(null);
