@@ -1,27 +1,54 @@
-2022-06-01 17:09:11.198  INFO 2324 --- [main] c.midd.core.MiddlewareApplicationTests   : Starting MiddlewareApplicationTests using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 2324 (started by user in C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware)
-2022-06-01 17:09:11.205  INFO 2324 --- [main] c.midd.core.MiddlewareApplicationTests   : No active profile set, falling back to 1 default profile: "default"
-2022-06-01 17:09:12.556  INFO 2324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-06-01 17:09:12.718  INFO 2324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 145 ms. Found 10 JPA repository interfaces.
-2022-06-01 17:09:13.395  INFO 2324 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$6322c828] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-06-01 17:09:13.494  INFO 2324 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2022-06-01 17:09:14.226  INFO 2324 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-06-01 17:09:14.336  INFO 2324 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
-2022-06-01 17:09:14.655  INFO 2324 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-06-01 17:09:15.007  INFO 2324 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-06-01 17:09:16.492  INFO 2324 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-06-01 17:09:16.546  INFO 2324 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
-2022-06-01 17:09:18.851  INFO 2324 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-06-01 17:09:18.877  INFO 2324 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-06-01 17:09:19.988  WARN 2324 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-06-01 17:09:20.157  WARN 2324 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+2022-06-02 11:04:08.850  INFO 15064 --- [main] c.midd.core.MiddlewareApplicationTests   : Starting MiddlewareApplicationTests using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 15064 (started by user in C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware)
+2022-06-02 11:04:08.872  INFO 15064 --- [main] c.midd.core.MiddlewareApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2022-06-02 11:04:12.978  INFO 15064 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-02 11:04:13.329  INFO 15064 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 317 ms. Found 10 JPA repository interfaces.
+2022-06-02 11:04:15.413  INFO 15064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$41a58c89] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-02 11:04:15.535  INFO 15064 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-06-02 11:04:17.366  INFO 15064 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-02 11:04:17.554  INFO 15064 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-06-02 11:04:18.200  INFO 15064 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-02 11:04:18.758  INFO 15064 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-02 11:04:20.953  INFO 15064 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-02 11:04:21.075  INFO 15064 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-06-02 11:04:27.084  INFO 15064 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-02 11:04:27.106  INFO 15064 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-02 11:04:30.071  WARN 15064 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-02 11:04:30.999  WARN 15064 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: 03f1ea2f-6e90-4f7d-8875-321f8f057ead
+Using generated security password: 6b358580-c8ac-4815-b35d-7f4c23440717
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2022-06-01 17:09:20.438  INFO 2324 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
-2022-06-01 17:09:21.366  INFO 2324 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-06-01 17:09:22.001  INFO 2324 --- [main] c.midd.core.MiddlewareApplicationTests   : Started MiddlewareApplicationTests in 11.302 seconds (JVM running for 13.188)
-2022-06-01 17:09:22.475  INFO 2324 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-06-01 17:09:22.480  INFO 2324 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-06-01 17:09:22.489  INFO 2324 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-06-02 11:04:31.868  INFO 15064 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-06-02 11:04:33.681  INFO 15064 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-06-02 11:04:35.486  INFO 15064 --- [main] c.midd.core.MiddlewareApplicationTests   : Started MiddlewareApplicationTests in 27.602 seconds (JVM running for 31.279)
+2022-06-02 11:04:36.503  INFO 15064 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-02 11:04:36.508  INFO 15064 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-02 11:04:36.615  INFO 15064 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-06-02 11:29:56.837  INFO 2532 --- [main] c.midd.core.MiddlewareApplicationTests   : Starting MiddlewareApplicationTests using Java 18.0.1.1 on DESKTOP-9TFUPPJ with PID 2532 (started by user in C:\TCS_Proyecto\middleware_tcs_proyecto\Middleware)
+2022-06-02 11:29:56.843  INFO 2532 --- [main] c.midd.core.MiddlewareApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2022-06-02 11:29:59.099  INFO 2532 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-02 11:29:59.351  INFO 2532 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 228 ms. Found 10 JPA repository interfaces.
+2022-06-02 11:30:00.659  INFO 2532 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f9a2c2a2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-02 11:30:00.786  INFO 2532 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-06-02 11:30:02.425  INFO 2532 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-02 11:30:02.633  INFO 2532 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-06-02 11:30:03.203  INFO 2532 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-02 11:30:04.122  INFO 2532 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-02 11:30:06.058  INFO 2532 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-02 11:30:06.102  INFO 2532 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-06-02 11:30:09.378  INFO 2532 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-02 11:30:09.408  INFO 2532 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-02 11:30:11.455  WARN 2532 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-02 11:30:12.063  WARN 2532 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 60d1fc91-5c34-435e-9e5b-b379dee0b936
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-06-02 11:30:12.774  INFO 2532 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-06-02 11:30:14.786  INFO 2532 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-06-02 11:30:15.917  INFO 2532 --- [main] c.midd.core.MiddlewareApplicationTests   : Started MiddlewareApplicationTests in 19.945 seconds (JVM running for 22.744)
+2022-06-02 11:30:16.519  INFO 2532 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-02 11:30:16.522  INFO 2532 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-02 11:30:16.538  INFO 2532 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

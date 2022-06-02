@@ -126,9 +126,8 @@ public class RecursosAsignacionesProyecto {
                                         mi.getId_equipo_asi());
                         servicio_asignaciones.agregarAsignacionProyecto(mi);
                         Equipo equipo = servicio_equipo.buscarEquipoMio(mi.getId_equipo_asi());
-                        return new ResponseEntity<>(respuestas.respuestas("Tu salida del proyecto " + equipo.getNombre_equipo_asi() + ", fue exitosa", "2000"),
-                                        HttpStatus.OK);
-
+                        Perfil mio = servicioPerfil.buscarPerfilMio(asignacion_proyecto.getUltimatix_asi());
+                        return obtenerAsignacionesUltimatix(mio);
                 } catch (Exception e) {
                         logger.warn("La asignación " + asignacion_proyecto.getId_asignacion_proyecto_asg()
                                         + " no se encuentra registrada");
