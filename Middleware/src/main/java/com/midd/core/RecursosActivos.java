@@ -44,7 +44,6 @@ public class RecursosActivos {
 			return new ResponseEntity<>(respuestas.respuestas("Activo ya registrado", "2001"), HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
 			if(activo.getTipo().equals("CPU/Portatil")){
-				System.out.println("Direccion mac capturada --> " + activo.getDireccion_mac());
 				if (!serviciosActivos.validarMAC_repetida(activo.getDireccion_mac())) {
 					logger.warn("La MAC " + activo.getDireccion_mac() + " ya se encuentra registrada");
 					return new ResponseEntity<>(respuestas.respuestas("MAC ya registrada", "2002"), HttpStatus.BAD_REQUEST);
@@ -70,10 +69,10 @@ public class RecursosActivos {
 			LocalDate uno = activo.getFecha_entrega().toLocalDate();
 			activo.setFecha_entrega(Date.valueOf(uno));
 			if (serviciosActivos.validarFecha(activo.getFecha_entrega(), activo.getFecha_registro())) {
-				logger.warn("La fecha de entrega " + activo.getFecha_entrega()
+				logger.warn("La fecha de adjudicación " + activo.getFecha_entrega()
 						+ " no puede ser mayor a la fecha de registro " + activo.getFecha_registro());
 				return new ResponseEntity<>(
-						respuestas.respuestas("La fecha de entrega no puede ser mayor a la fecha de registro", "2004"),
+						respuestas.respuestas("La fecha de adjudicación no puede ser mayor a la fecha de registro", "2004"),
 						HttpStatus.BAD_REQUEST);
 			}
 			serviciosActivos.agregarActivo(activo);

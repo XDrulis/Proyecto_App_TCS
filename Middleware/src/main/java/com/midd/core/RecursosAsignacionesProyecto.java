@@ -127,7 +127,7 @@ public class RecursosAsignacionesProyecto {
                         servicio_asignaciones.agregarAsignacionProyecto(mi);
                         Equipo equipo = servicio_equipo.buscarEquipoMio(mi.getId_equipo_asi());
                         return new ResponseEntity<>(respuestas.respuestas("Tu salida del proyecto " + equipo.getNombre_equipo_asi() + ", fue exitosa", "2000"),
-                                        HttpStatus.BAD_REQUEST);
+                                        HttpStatus.OK);
 
                 } catch (Exception e) {
                         logger.warn("La asignación " + asignacion_proyecto.getId_asignacion_proyecto_asg()
