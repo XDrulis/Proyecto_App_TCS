@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+      - Middleware
+      - Front_End
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
