@@ -1,0 +1,54 @@
+<!-- Body -->
+<section class="vh-100 vw-100 gradient-custom">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <!-- Card -->
+        <div class="card shadow-lg" style="border-radius: 2rem;">
+          <div class="card-body px-5 text-center">
+            <!-- Title -->
+            <h1 class="my-4 fs-2">BIENVENIDO {{currentUser?.nombre | uppercase}}</h1>
+
+            <!-- Assets -->
+            <div class="mb-3">
+              <app-button buttonName="Registro de activos" iconName="ballot" [buttonIcon]="true"
+                (btnClick)="toAssets()">
+              </app-button>
+            </div>
+
+            <!-- Teams -->
+            <div class="mb-4" *ngIf="profile?.rol === 'admin'">
+              <app-button buttonName="Grupos de trabajo" iconName="group" [buttonIcon]="true" (btnClick)="toTeams()">
+              </app-button>
+            </div>
+
+            <!-- Tasks -->
+            <div class="mb-3">
+              <app-button buttonName="Asignación de trabajos" iconName="assignment_ind" [buttonIcon]="true"
+                (btnClick)="toTasks()"></app-button>
+            </div>
+
+            <!-- Reportes -->
+            <div class="mb-3" *ngIf="profile?.rol === 'admin'">
+              <app-button buttonName="Generación de reportes" iconName="insert_drive_file" [buttonIcon]="true"
+                (btnClick)="toReports()"></app-button>
+            </div>
+
+            <!-- Forms -->
+            <div class="mb-4" *ngIf="false">
+              <app-button buttonName="Formularios dinámicos" iconName="view_compact" [buttonIcon]="true"
+                (btnClick)="toForms()">
+              </app-button>
+            </div>
+
+            <!-- Log Out -->
+            <span class="d-flex justify-content-center" style="column-gap: 2%;">
+              <mat-icon>exit_to_app</mat-icon>
+              <a (click)="toLogin()" class="custom-link" style="cursor: pointer;">Cerrar sesión</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

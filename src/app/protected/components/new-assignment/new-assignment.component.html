@@ -1,0 +1,64 @@
+<h1 mat-dialog-title>Registrar asignación</h1>
+<div mat-dialog-content>
+  <form [formGroup]="nuevoAsignacionForm">
+    <div class="row">
+      <!-- Teams -->
+      <div class="form-floating col-12 col-sm-12 mb-3">
+        <select id="floatingOptions" class="form-select" aria-label="Default select example"
+          formControlName="id_equipo_asi">
+          <option selected value="">Seleccione un equipo</option>
+          <ng-container *ngFor="let item of teams">
+            <option *ngIf="item.estado_asi" [value]="item.id_asi">{{item.nombre_equipo_asi + ' | ' +
+              item.tipo_equipo_asi}}
+            </option>
+          </ng-container>
+        </select>
+        <label for="floatingOptions">Equipos</label>
+        <div
+          *ngIf="(getCtrl('id_equipo_asi')?.invalid && getCtrl('id_equipo_asi')?.touched) || getCtrl('id_equipo_asi')?.dirty">
+          <span class="form-text text-danger float-start" *ngIf="getCtrl('id_equipo_asi')?.errors?.['required']">
+            * Seleccione un equipo.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Assignment percentage -->
+      <div class="form-floating col-12 mb-3">
+        <select id="floatingPercent" class="form-select" formControlName="asignacion">
+          <option [value]="i * 100" *ngFor="let i of [0.25, 0.5, 0.75, 1]">{{i | percent}}</option>
+        </select>
+        <label for="floatingPercent">Porcentaje de asignación</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Start date -->
+      <div class="col mb-3">
+        <label class="form-label">Fecha de inicio</label>
+        <input type="date" class="form-control" formControlName="fecha_inicio">
+        <div
+          *ngIf="(getCtrl('fecha_inicio')?.invalid && getCtrl('fecha_inicio')?.touched) || getCtrl('fecha_inicio')?.dirty">
+          <span class="form-text text-danger float-start" *ngIf="getCtrl('fecha_inicio')?.errors?.['required']">
+            * Seleccione una fecha válida.
+          </span>
+        </div>
+      </div>
+      <!-- End date -->
+      <div class="col mb-3">
+        <label class="form-label">Fecha de finalización</label>
+        <input type="date" class="form-control" formControlName="fecha_fin">
+        <div *ngIf="(getCtrl('fecha_fin')?.invalid && getCtrl('fecha_fin')?.touched) || getCtrl('fecha_fin')?.dirty">
+          <span class="form-text text-danger float-start" *ngIf="getCtrl('fecha_fin')?.errors?.['required']">
+            * Seleccione una fecha válida.
+          </span>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button mat-dialog-close (click)="exit()">Cancelar</button>
+  <button mat-stroked-button (click)="save()">Guardar</button>
+</div>
