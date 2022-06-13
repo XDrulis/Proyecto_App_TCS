@@ -4,9 +4,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ButtonComponent } from './components/button/button.component';
 import { CustomTableComponent } from './components/custom-table/custom-table.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TasksService } from './services/tasks.service';
 import { UserService } from './services/user.service';
-
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,10 @@ import { UserService } from './services/user.service';
   imports: [
     CommonModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     ButtonComponent,

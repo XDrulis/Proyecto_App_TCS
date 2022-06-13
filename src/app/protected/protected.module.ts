@@ -42,6 +42,10 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { TemplateComponent } from './components/template/template.component';
 import { ProtectedRoutingModule } from './protected-routing.module';
+import { AddCatalogComponent } from './components/add-catalog/add-catalog.component';
+import { AddCatalogBuildingComponent } from './components/add-catalog-building/add-catalog-building.component';
+import { EditFuncSkillsComponent } from './components/edit-func-skills/edit-func-skills.component';
+import { EditAppsComponent } from './components/edit-apps/edit-apps.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +79,10 @@ import { ProtectedRoutingModule } from './protected-routing.module';
     MatTableComponent,
     FilterComponent,
     SubtitleComponent,
+    AddCatalogComponent,
+    AddCatalogBuildingComponent,
+    EditFuncSkillsComponent,
+    EditAppsComponent,
   ],
   imports: [
     CommonModule,

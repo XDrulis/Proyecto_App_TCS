@@ -5,7 +5,10 @@ export interface User {
   apellido?: string,
   telefono?: string,
   correo?: string,
-  rol?: string,
+  fecha_login?: string,
+  intentos?: number,
+  token?: string,
+  estado?: boolean,
   mensaje?: string
   status?: string
   timestamp?: string

@@ -5,8 +5,9 @@ import { Assignment } from '../../interfaces/asignacion';
 import { Team } from '../../interfaces/equipo';
 import { AdminService } from '../../services/admin.service';
 import { EquiposService } from '../../services/equipos.service';
-import { GeneralService } from '../../services/general.service';
 import { assignmentColumns, teamColumns, assetColumns } from './structure';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-reports',
@@ -20,20 +21,53 @@ export class ReportsComponent implements OnInit {
   teamColumns = teamColumns;
   assignmentColumns = assignmentColumns;
 
+  assetst!: MatTableDataSource<Asset>;
   assets!: MatTableDataSource<Asset>;
   teams!: MatTableDataSource<Team>;
+  teamst!: MatTableDataSource<Team>;
   assignments!: MatTableDataSource<Assignment>;
+  assignmentst!: MatTableDataSource<Assignment>;
+
+  baseUrl: string = `${environment.url}/`;
 
   constructor(
     private adminService: AdminService,
     private teamService: EquiposService,
-    private generalService: GeneralService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
     this.loadAssets();
     this.loadTeams();
     this.loadAssignments();
+    this.loadAssetsT();
+    this.loadTeamsT();
+    this.loadAssignmentsT();
+  }
+
+  loadAssetsT() {
+    this.adminService.getAssetsT()
+      .subscribe({
+        next: resp => {
+          this.assetst = new MatTableDataSource(resp)
+        }
+      });
+  }
+
+  loadTeamsT() {
+    this.teamService.show()
+      .subscribe({
+        next: resp => {
+          this.teamst = new MatTableDataSource(resp)
+        }
+      });
+  }
+
+  loadAssignmentsT() {
+    this.adminService.getAssignmentsT()
+      .subscribe({
+        next: resp => this.assignmentst = new MatTableDataSource(resp)
+      });
   }
 
   loadAssets() {
@@ -46,7 +80,7 @@ export class ReportsComponent implements OnInit {
   }
 
   loadTeams() {
-    this.teamService.show()
+    this.adminService.getTeam()
       .subscribe({
         next: resp => this.teams = new MatTableDataSource(resp)
       });
@@ -59,8 +93,7 @@ export class ReportsComponent implements OnInit {
       });
   }
 
-  exportTable(data: any, reportName: string): void {
-    this.generalService.exportData(data.filteredData, reportName);
-  }
+
+
 
 }

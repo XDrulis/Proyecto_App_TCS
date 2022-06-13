@@ -22,6 +22,16 @@ export class ProfileService {
     return this.http.get<Skills[]>(url);
   }
 
+  getFuncSkills() {
+    const url: string = `${this.baseUrl}/habilidadesFuncionales`;
+    return this.http.get<Skills[]>(url);
+  }
+
+  getApps() {
+    const url: string = `${this.baseUrl}/aplicaciones`;
+    return this.http.get<Skills[]>(url);
+  }
+
   updateAboutMe(ultimatix: string, aboutMe: string) {
     const url: string = `${this.baseUrl}/sobreMi`;
     return this.http.post<Profile>(url, { id_ultimatix: ultimatix, sobreMi: aboutMe });
@@ -30,6 +40,19 @@ export class ProfileService {
   updateMySkills(ultimatix: string, skills: string[], knowledgeLevel: string[]) {
     const url: string = `${this.baseUrl}/editarMisHabilidades`;
     const body = { id_ultimatix: ultimatix, habilidades: skills, nivel_habilidad: knowledgeLevel };
+    return this.http.post<Profile>(url, body);
+  }
+
+  updateMyFuncSkills(ultimatix: string, skills: string[], knowledgeLevel: string[]) {
+    const url: string = `${this.baseUrl}/editarMisHabilidades-funcionales`;
+    const body = { id_ultimatix: ultimatix, habilidades_funcionales: skills, nivel_habilidad_funcional: knowledgeLevel };
+    console.log
+    return this.http.post<Profile>(url, body);
+  }
+
+  updateMyApps(ultimatix: string, skills: string[], knowledgeLevel: string[]) {
+    const url: string = `${this.baseUrl}/editarAplicaciones`;
+    const body = { id_ultimatix: ultimatix, aplicaciones: skills, nivel_aplicaciones: knowledgeLevel };
     return this.http.post<Profile>(url, body);
   }
 
