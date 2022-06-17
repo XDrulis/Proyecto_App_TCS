@@ -48,4 +48,5 @@ export class ActivosService {
     const body = { id_activo: id, id_ultimatix: ultimatix, fecha_devolucion: deliveryDate };
     return this.http.post<Asset[]>(url, body);
   }
+
 }

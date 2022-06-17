@@ -1,0 +1,83 @@
+<h1 mat-dialog-title>Editar mis aplicaciones</h1>
+<div mat-dialog-content>
+  <form [formGroup]="appsForm">
+    <div class="row">
+      <!-- Add new skill -->
+      <div class="col-12 col-sm-6 mb-3">
+        <div class="form-floating">
+          <select class="form-select" id="apps" formControlName="skills">
+            <option [ngValue]="skill" *ngFor="let skill of skillsList">{{skill}}</option>
+          </select>
+          <label for="apps">Aplicaciones</label>
+        </div>
+        <div *ngIf="skill?.invalid && skill?.touched">
+          <span class="form-text text-danger float-start" *ngIf="skill?.invalid">
+            Selecciona una aplicación.
+          </span>
+        </div>
+      </div>
+
+      <!-- Add knowledge level -->
+      <div class="col-12 col-sm-6 mb-3">
+        <div class="form-floating">
+          <select class="form-select" id="app-levels" formControlName="levels" required>
+            <option [ngValue]="level" *ngFor="let level of knowledgeLevelList">{{level}}</option>
+          </select>
+          <label for="app-levels">Nivel de conocimiento</label>
+        </div>
+        <div *ngIf="level?.invalid && level?.touched">
+          <span class="form-text text-danger float-start" *ngIf="level?.invalid">
+            Selecciona un nivel de conocimiento.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <app-button id="add-app" buttonName="Añadir" [buttonIcon]="true" iconName="add_circle" (btnClick)="addSkill()"
+        class="col-12 col-sm-4">
+      </app-button>
+    </div>
+
+    <!-- My skills list -->
+    <div class="row mb-3 text-center">
+      <label class="text-uppercase fw-bold">Mis aplicaciones</label>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <label class="col-form-label">Aplicaciones:</label>
+      </div>
+      <div class="col-6">
+        <label class="col-form-label">Nivel:</label>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-6">
+        <div class="input-group mb-1" *ngFor="let mySkill of tempSkillsList; let i = index">
+          <span class="input-group-text">{{i + 1}}</span>
+          <input type="text" class="form-control" disabled [value]="mySkill">
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="input-group mb-1" *ngFor="let myLevel of tempKnowledgeLevelList; let i = index">
+          <span class="input-group-text">{{i + 1}}</span>
+          <input type="text" class="form-control" disabled [value]="myLevel">
+          <button id="{{ 'delete-apps-' + i }}" type="button" class="btn btn-outline-danger" (click)="deleteSkill(i)">
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <span *ngIf="!savedSkills" class="form-text text-danger float-end">
+    * Cambios sin guardar
+  </span>
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button (click)="exit()">Cancelar</button>
+  <button id="save-apps" mat-stroked-button (click)="updateSkills()">Guardar cambios</button>
+</div>

@@ -2,24 +2,49 @@
   <app-header title="Reportes"></app-header>
 
   <section class="py-3">
-    <app-subtitle title="Activos"></app-subtitle>   
+    <app-subtitle title="Activos"></app-subtitle>
     <app-filter [data]="assets"></app-filter>
-    <button mat-raised-button color="primary" class="float-end" (click)="exportTable(this.assets, 'Activos')">Generar Reporte</button>
-    <app-mat-table [columns]="assetcolumns" [dataSource]="assets"></app-mat-table>
+    <button mat-raised-button color="primary" class="float-end">
+      <a href="{{ baseUrl + 'reportes/activos-reportes' }}" style="color:white; text-decoration: none" target="_blank"
+         rel="noopener">
+        Generar reporte
+      </a>
+    </button>
+    <app-mat-table [columns]="assetColumns" [dataSource]="assets"></app-mat-table>
   </section>
 
   <section class="py-3">
     <app-subtitle title="Grupos de trabajo"></app-subtitle>
     <app-filter [data]="teams"></app-filter>
-    <button mat-raised-button color="primary" class="float-end" (click)="exportTable(this.teams, 'Grupos de trabajo')">Generar Reporte</button>
+    <button mat-raised-button color="primary" class="float-end">
+      <a href="{{ baseUrl + 'reportes/equipos-reportes' }}" style="color:white; text-decoration: none" target="_blank"
+         rel="noopener">
+        Generar reporte
+      </a>
+    </button>
     <app-mat-table [columns]="teamColumns" [dataSource]="teams"></app-mat-table>
   </section>
 
   <section class="py-3">
     <app-subtitle title="Asignaciones"></app-subtitle>
     <app-filter [data]="assignments"></app-filter>
-    <button mat-raised-button color="primary" class="float-end" (click)="exportTable(this.assignments, 'Asignaciones')">Generar Reporte</button>
+    <button mat-raised-button color="primary" class="float-end">
+      <a href="{{ baseUrl + 'reportes/asignaciones-reportes'}}" style="color:white; text-decoration: none"
+         target="_blank" rel="noopener">
+        Generar reporte
+      </a>
+    </button>
     <app-mat-table [columns]="assignmentColumns" [dataSource]="assignments"></app-mat-table>
   </section>
 
+  <section class="py-3">
+    <app-subtitle title="Habilidades"></app-subtitle>
+    <app-filter [data]="profiles"></app-filter>
+    <button mat-raised-button color="primary" class="float-end">
+      <a href="{{ baseUrl + 'reportes/habilidades-reportes'}}" style="color:white; text-decoration: none">
+        Generar reporte
+      </a>
+    </button>
+    <app-mat-table [columns]="profileColumns" [dataSource]="profiles"></app-mat-table>
+  </section>
 </div>

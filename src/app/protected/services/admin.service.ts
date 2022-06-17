@@ -20,4 +20,5 @@ export class AdminService {
     const url: string = `${environment.url}/asignaciones-proyectos/buscar-asignaciones`;
     return this.http.get<Assignment[]>(url);
   }
+
 }

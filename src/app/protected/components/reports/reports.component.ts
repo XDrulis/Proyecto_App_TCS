@@ -5,43 +5,49 @@ import { Assignment } from '../../interfaces/asignacion';
 import { Team } from '../../interfaces/equipo';
 import { AdminService } from '../../services/admin.service';
 import { EquiposService } from '../../services/equipos.service';
-import { GeneralService } from '../../services/general.service';
-import { assignmentColumns, teamColumns, assetColumns } from './structure';
+import { assignmentColumns, teamColumns, assetColumns, profileColumns } from './structure';
+import { environment } from 'src/environments/environment';
+import { Profile } from '../../interfaces/profile';
+import { ProfileService } from '../../services/profile.service';
 
 @Component({
   selector: 'app-reports',
   templateUrl: './reports.component.html',
-  styles: [
-  ]
+  styles: []
 })
 export class ReportsComponent implements OnInit {
 
-  assetcolumns = assetColumns;
+  assetColumns = assetColumns;
   teamColumns = teamColumns;
   assignmentColumns = assignmentColumns;
+  profileColumns = profileColumns;
 
+  assetst!: MatTableDataSource<Asset>;
   assets!: MatTableDataSource<Asset>;
   teams!: MatTableDataSource<Team>;
   assignments!: MatTableDataSource<Assignment>;
+  assignmentst!: MatTableDataSource<Assignment>;
+  profiles!: MatTableDataSource<Profile>;
+
+  baseUrl: string = `${environment.url}/`;
 
   constructor(
     private adminService: AdminService,
     private teamService: EquiposService,
-    private generalService: GeneralService,
+    private profileService: ProfileService
   ) { }
 
   ngOnInit(): void {
     this.loadAssets();
     this.loadTeams();
     this.loadAssignments();
+    this.loadProfiles();
   }
 
   loadAssets() {
     this.adminService.getAssets()
       .subscribe({
-        next: resp => {
-          this.assets = new MatTableDataSource(resp)
-        }
+        next: resp => this.assets = new MatTableDataSource(resp)
       });
   }
 
@@ -59,8 +65,11 @@ export class ReportsComponent implements OnInit {
       });
   }
 
-  exportTable(data: any, reportName: string): void {
-    this.generalService.exportData(data.filteredData, reportName);
+  loadProfiles() {
+    this.profileService.getProfiles()
+      .subscribe({
+        next: resp => this.profiles = new MatTableDataSource(resp)
+      });
   }
 
 }

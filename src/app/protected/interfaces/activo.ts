@@ -23,4 +23,14 @@ export interface Asset {
 export interface AssetType {
     id: number,
     nombre: string,
+    mensaje?: string,
+    status?: string,
+    timestamp?: string,
+}
+
+export interface AssetReport {
+  Código_de_Activo: "231564"
+  Dirección_IP: ""
+  Dirección_Mac: ""
+
 }
