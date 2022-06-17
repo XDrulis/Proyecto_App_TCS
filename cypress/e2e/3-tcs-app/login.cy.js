@@ -31,7 +31,7 @@ describe('Demo de Testing de Inicio de Sesión', () => {
         cy.visit('http://localhost:4200/'); // ir a la pagina principal 
 
         cy.get('.mb-3 > .form-control').type("0000000");
-        cy.get('.input-group > .form-control').type("@ClaveInvalida");
+        cy.get('.input-group > .form-control').type("@@ClaveInvalid");
         cy.get('.btn').click();
         cy.get('#swal2-title').should('have.text','Error');
     });
@@ -41,7 +41,7 @@ describe('Demo de Testing de Inicio de Sesión', () => {
         cy.visit('http://localhost:4200/'); // ir a la pagina principal 
 
         cy.get('.mb-3 > .form-control').type("0000000232");
-        cy.get('.input-group > .form-control').type("@ClaveInvalida");
+        cy.get('.input-group > .form-control').type("@ClaveInva");
         cy.get('.btn').click();
         cy.get('#swal2-title').should('have.text','Error');
     });
@@ -50,7 +50,7 @@ describe('Demo de Testing de Inicio de Sesión', () => {
         cy.visit('http://localhost:4200/'); // ir a la pagina principal 
 
         cy.get('.mb-3 > .form-control').type("12345");
-        cy.get('.input-group > .form-control').type("@ClaveInvalida");
+        cy.get('.input-group > .form-control').type("@ClaveInvali");
         cy.get('.btn').click();
         cy.get('#swal2-title').should('have.text','Error');
     });
